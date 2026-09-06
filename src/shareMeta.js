@@ -1,6 +1,6 @@
 /** Social / messaging link previews: absolute URLs for og:image and canonical */
 
-const SHARE_IMAGE_PATH = "hero-letter-cover.jpg";
+const SHARE_IMAGE_PATH = "https://placehold.co/1200x630/fef5f3/b8736e?text=Wedding+Invitation";
 
 const SHARE_BY_LANG = {
   en: {
@@ -55,10 +55,13 @@ export function applyShareMeta(lang = "en") {
 
   const base = import.meta.env.BASE_URL || "/";
   const origin = window.location.origin;
-  const imageUrl = new URL(
-    SHARE_IMAGE_PATH,
-    origin + (base.endsWith("/") ? base : `${base}/`),
-  ).href;
+  // Use SHARE_IMAGE_PATH directly if it's already a full URL
+  const imageUrl = SHARE_IMAGE_PATH.startsWith("http") 
+    ? SHARE_IMAGE_PATH 
+    : new URL(
+        SHARE_IMAGE_PATH,
+        origin + (base.endsWith("/") ? base : `${base}/`),
+      ).href;
   const pageUrl = `${origin}${window.location.pathname}${window.location.search}`;
 
   document.title = share.title;

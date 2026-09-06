@@ -1,14 +1,14 @@
-/** Local imagery in /public (hero, story, ceremony, reception). */
+/** Placeholder imagery - replace with actual wedding photos */
 export const figmaAssets = {
   /** Hero: outdoor reception illustration (orchard) */
-  heroInvitationCover: "/outdoor-wedding-reception-orchard-copy.png",
+  heroInvitationCover: "https://placehold.co/800x1000/f5d4cf/b8736e?text=Hero+Image",
   /** Our Journey: couple portrait */
-  storyPhotoPortrait: "/IMG_2365%202.JPG",
-  /** Katoghike / Saint Anna Church (local photo, /public) */
+  storyPhotoPortrait: "https://placehold.co/600x800/fae9e5/8b5b5b?text=Couple+Photo",
+  /** Ceremony venue photo/map */
   ceremonyMap:
-    "/DX6dgadX0AAdEkj.jpeg",
-  /** Reception venue (Art Village; local copy in /public) */
-  receptionMap: "/3535_1_.jpg",
+    "https://placehold.co/800x600/fef5f3/b8736e?text=Ceremony+Venue",
+  /** Reception venue photo/map */
+  receptionMap: "https://placehold.co/800x600/f5ddd8/8b5b5b?text=Reception+Venue",
 };
 
 /** Maps + official venue pages */
