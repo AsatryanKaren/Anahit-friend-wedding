@@ -70,9 +70,9 @@ export default function FigmaInvite() {
       >
         <div className={styles.topNavBrand}>
           <p className={styles.logo}>
-            <span className={styles.logoName}>{f.logo.karen}</span>
+            <span className={styles.logoName}>{f.logo.first}</span>
             <span className={styles.logoAmp}>&amp;</span>
-            <span className={styles.logoName}>{f.logo.anna}</span>
+            <span className={styles.logoName}>{f.logo.second}</span>
           </p>
           <LanguageSwitcher
             lang={lang}

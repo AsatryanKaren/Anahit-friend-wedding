@@ -237,7 +237,7 @@ export const figmaByLang = {
       schedule: "Schedule",
       roots: "Roots",
     },
-    logo: { karen: "Andranik", anna: "Anushik" },
+    logo: { first: "Andranik", second: "Anushik" },
     hero: {
       ariaSection: "Welcome",
       kicker: "You are invited to the wedding of",
@@ -340,7 +340,7 @@ export const figmaByLang = {
       schedule: "Ծրագիր",
       roots: "Արմատներ",
     },
-    logo: { karen: "Անդրանիկ", anna: "Անուշիկ" },
+    logo: { first: "Անդրանիկ", second: "Անուշիկ" },
     hero: {
       ariaSection: "Բարի գալուստ",
       kicker: "Սիրով հրավիրում ենք մեր հարսանիքին",
@@ -442,7 +442,7 @@ export const figmaByLang = {
       schedule: "Программа",
       roots: "Корни",
     },
-    logo: { karen: "Андраник", anna: "Анушик" },
+    logo: { first: "Андраник", second: "Анушик" },
     hero: {
       ariaSection: "Добро пожаловать",
       kicker: "С любовью приглашаем на нашу свадьбу",
