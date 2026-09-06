@@ -60,13 +60,12 @@ export default function FigmaInvite() {
   const motion = reducedMotion ? "reduce" : "full";
   const navIds = NAV_IDS;
   
-  const scheduleLineRef = useRef(null);
   const scheduleHeartRef = useRef(null);
   const scheduleTrackRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!scheduleLineRef.current || !scheduleHeartRef.current || !scheduleTrackRef.current) return;
+      if (!scheduleHeartRef.current || !scheduleTrackRef.current) return;
       
       const scheduleTrack = scheduleTrackRef.current;
       const rect = scheduleTrack.getBoundingClientRect();
@@ -76,18 +75,23 @@ export default function FigmaInvite() {
       const trackHeight = rect.height;
       const trackBottom = rect.bottom;
       
-      if (trackBottom < 0 || trackTop > windowHeight) {
-        return;
+      // Calculate scroll progress from very start to very end
+      let percentage = 0;
+      
+      if (trackBottom < 0) {
+        // Fully scrolled past
+        percentage = 100;
+      } else if (trackTop > windowHeight) {
+        // Not yet in view
+        percentage = 0;
+      } else {
+        // Calculate based on how much has been scrolled through
+        const scrolledPast = windowHeight - trackTop;
+        const totalScrollDistance = windowHeight + trackHeight;
+        percentage = (scrolledPast / totalScrollDistance) * 100;
+        percentage = Math.min(100, Math.max(0, percentage));
       }
       
-      const visibleTop = Math.max(0, -trackTop);
-      const visibleBottom = Math.min(trackHeight, windowHeight - trackTop);
-      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-      const scrollProgress = visibleHeight / trackHeight;
-      
-      const percentage = Math.min(100, Math.max(0, scrollProgress * 100));
-      
-      scheduleLineRef.current.style.height = `${percentage}%`;
       scheduleHeartRef.current.style.top = `${percentage}%`;
     };
     
@@ -480,9 +484,6 @@ export default function FigmaInvite() {
             <div className={styles.scheduleFlow}>
               <div className={styles.scheduleTrack} ref={scheduleTrackRef}>
                 <ScheduleVine className={styles.scheduleVine} />
-                <div className={styles.scheduleScrollLine}>
-                  <div className={styles.scheduleScrollLineProgress} ref={scheduleLineRef}></div>
-                </div>
                 <div className={styles.scheduleScrollHeart} ref={scheduleHeartRef}>❤️</div>
                 <ol className={styles.scheduleList}>
                   {f.schedule.rows.map((row, i) => {
