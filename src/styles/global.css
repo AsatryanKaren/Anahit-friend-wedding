@@ -1,7 +1,7 @@
 :root {
-  --ink: #061b0e;
-  /* Sage cream, same surface as FigmaInvite `.page` (--cream) */
-  --cream: #edf3ee;
+  --ink: #2d1820;
+  /* Blush cream background */
+  --cream: #fef5f3;
   --sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --serif: "Noto Serif", ui-serif, Georgia, serif;
 }
@@ -51,7 +51,7 @@ textarea {
 }
 
 ::selection {
-  background: rgba(115, 92, 0, 0.18);
+  background: rgba(203, 108, 117, 0.18);
 }
 
 .srOnly {
