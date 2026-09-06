@@ -14,7 +14,6 @@ import {
 import { ScheduleVine } from "./components/ScheduleVine.jsx";
 import { LanguageSwitcher } from "./components/LanguageSwitcher/LanguageSwitcher.jsx";
 import { useI18n } from "./i18n/LanguageContext.jsx";
-import { useInviteMode } from "./hooks/InviteContext.jsx";
 import styles from "./FigmaInvite.module.css";
 
 const WEDDING_AT = new Date("2026-06-24T14:00:00");
@@ -51,7 +50,6 @@ function Reveal({
 
 export default function FigmaInvite() {
   const { lang, setLang, t } = useI18n();
-  const { hasSpecialAccess } = useInviteMode();
   const f = t.figma;
   const countdown = useWeddingCountdown(WEDDING_AT);
   const reducedMotion = useReducedMotion();
@@ -59,9 +57,7 @@ export default function FigmaInvite() {
   const activeNavId = useActiveNavSection(88);
 
   const motion = reducedMotion ? "reduce" : "full";
-  const navIds = hasSpecialAccess
-    ? NAV_IDS
-    : NAV_IDS.filter((item) => item.id !== "schedule");
+  const navIds = NAV_IDS;
 
   return (
     <div className={styles.page} data-motion={motion}>
@@ -204,7 +200,7 @@ export default function FigmaInvite() {
             </header>
           </Reveal>
           <div
-            className={`${styles.eventCards} ${!hasSpecialAccess ? styles.eventCardsSingle : ""}`.trim()}
+            className={styles.eventCards}
           >
             <Reveal reducedMotion={reducedMotion}>
               <article className={styles.eventCard}>
@@ -254,7 +250,7 @@ export default function FigmaInvite() {
                 </div>
               </article>
             </Reveal>
-            {hasSpecialAccess && (
+            {(
               <Reveal reducedMotion={reducedMotion} delayMs={120}>
                 <article className={styles.eventCard}>
                   <div className={styles.eventCardTop}>
@@ -427,7 +423,7 @@ export default function FigmaInvite() {
         </div>
       </section>
 
-      {hasSpecialAccess && (
+      {(
         <section
           id="schedule"
           className={styles.schedule}

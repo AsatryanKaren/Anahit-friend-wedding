@@ -47,79 +47,77 @@ export function Hero({ t, lang }) {
       aria-label={t.hero.ariaLabel}
       data-loaded={loaded ? "1" : "0"}
     >
-      <div className={styles.bg} aria-hidden="true">
-        <div className={styles.bgFade} />
-        <Particles count={18} seed={24} />
-        <Petals count={7} seed={2406} />
-        <div className={styles.vignette} />
-      </div>
+      <div className={styles.bg} aria-hidden="true" />
 
-      <div className={styles.frame} aria-hidden="true">
-        <svg
-          viewBox="0 0 1000 520"
-          className={styles.frameSvg}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect x="34" y="34" width="932" height="452" rx="26" />
-        </svg>
-      </div>
+      <div className={styles.container}>
+        {/* Left side - Names and subtitle */}
+        <div className={styles.leftSide}>
+          <div className={styles.names}>
+            <h1 className={styles.nameLine}>
+              <span className={styles.name}>{t.hero.names.first}</span>
+            </h1>
+            <div className={styles.divider}>
+              <span className={styles.dividerLine} />
+            </div>
+            <h2 className={styles.nameLine}>
+              <span className={styles.name}>{t.hero.names.second}</span>
+            </h2>
+          </div>
+          
+          <div className={styles.subtitle}>
+            {t.hero.subtitle}
+          </div>
 
-      <div className={styles.inner}>
-        <div className={styles.top}>
-          <div className={shared.eyebrow}>{t.hero.subtitle}</div>
+          {showCountdown && (
+            <div className={styles.countdown} aria-label={t.hero.countdownLabel}>
+              <div className={styles.countdownLabel}>
+                {t.hero.countdownLabel}
+              </div>
+              <div className={styles.countdownValue}>
+                {formatCountdown(msLeft, lang)}
+              </div>
+            </div>
+          )}
         </div>
 
-        <div className={styles.names}>
-          <h1 className={styles.nameLine}>
-            <span className={styles.name}>{t.hero.names.first}</span>
-          </h1>
-          <div className={styles.and} aria-hidden="true">
-            <span className={styles.andLine} />
-            <span className={styles.andAmp}>&</span>
-            <span className={styles.andLine} />
-          </div>
-          <h2 className={styles.nameLine}>
-            <span className={styles.name}>{t.hero.names.second}</span>
-          </h2>
-        </div>
-
-        <Ornament />
-
-        <div className={styles.infoGrid} aria-label={t.ceremony.title}>
-          <div className={styles.infoItem}>
-            <div className={styles.k}>{t.hero.dateLabel}</div>
-            <div className={styles.v}>{t.hero.date}</div>
-          </div>
-          <div className={styles.infoItem}>
-            <div className={styles.k}>{t.hero.timeLabel}</div>
-            <div className={styles.v}>{t.hero.time}</div>
-          </div>
-          <div className={`${styles.infoItem} ${styles.infoWide}`}>
-            <div className={styles.k}>{t.hero.placeLabel}</div>
-            <div className={styles.v}>{t.hero.place}</div>
+        {/* Right side - Event details */}
+        <div className={styles.rightSide}>
+          <div className={styles.detailsCard}>
+            <div className={styles.detailItem}>
+              <div className={styles.detailIcon}>📅</div>
+              <div className={styles.detailContent}>
+                <div className={styles.detailLabel}>{t.hero.dateLabel}</div>
+                <div className={styles.detailValue}>{t.hero.date}</div>
+              </div>
+            </div>
+            
+            <div className={styles.detailItem}>
+              <div className={styles.detailIcon}>🕐</div>
+              <div className={styles.detailContent}>
+                <div className={styles.detailLabel}>{t.hero.timeLabel}</div>
+                <div className={styles.detailValue}>{t.hero.time}</div>
+              </div>
+            </div>
+            
+            <div className={styles.detailItem}>
+              <div className={styles.detailIcon}>📍</div>
+              <div className={styles.detailContent}>
+                <div className={styles.detailLabel}>{t.hero.placeLabel}</div>
+                <div className={styles.detailValue}>{t.hero.place}</div>
+              </div>
+            </div>
           </div>
         </div>
-
-        {showCountdown ? (
-          <div className={styles.countdown} aria-label={t.hero.countdownLabel}>
-            <span className={styles.countdownLabel}>
-              {t.hero.countdownLabel}
-            </span>
-            <span className={styles.countdownValue}>
-              {formatCountdown(msLeft, lang)}
-            </span>
-          </div>
-        ) : null}
-
-        <a
-          className={styles.scroll}
-          href="#invitation"
-          aria-label={t.hero.scrollHint}
-        >
-          <span className={styles.scrollText}>{t.hero.scrollHint}</span>
-          <span className={styles.scrollDot} aria-hidden="true" />
-        </a>
       </div>
+
+      <a
+        className={styles.scroll}
+        href="#invitation"
+        aria-label={t.hero.scrollHint}
+      >
+        <span className={styles.scrollText}>{t.hero.scrollHint}</span>
+        <span className={styles.scrollIcon}>↓</span>
+      </a>
     </section>
   );
 }
