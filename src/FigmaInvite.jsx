@@ -98,86 +98,72 @@ export default function FigmaInvite() {
 
       <section
         id="home"
-        className={styles.heroModern}
+        className={styles.heroElegant}
         aria-label={f.hero.ariaSection}
       >
-        <div className={styles.heroModernBg} aria-hidden="true" />
+        <div className={styles.heroElegantBg}>
+          <div className={styles.heroElegantOrb1} />
+          <div className={styles.heroElegantOrb2} />
+          <div className={styles.heroElegantOrb3} />
+        </div>
         
-        <div className={styles.heroModernContainer}>
-          {/* Left side - Names and subtitle */}
-          <div className={styles.heroModernLeft}>
-            <div className={styles.heroModernNames}>
-              <h1 className={styles.heroModernName}>Andranik</h1>
-              <div className={styles.heroModernDivider}>
-                <span className={styles.heroModernDividerLine} />
-              </div>
-              <h2 className={styles.heroModernName}>Anushik</h2>
+        <div className={styles.heroElegantContent}>
+          <div className={styles.heroElegantOrnament}>✦</div>
+          
+          <div className={styles.heroElegantKicker}>
+            {f.hero.kicker}
+          </div>
+          
+          <div className={styles.heroElegantNames}>
+            <h1 className={styles.heroElegantName}>Andranik</h1>
+            <div className={styles.heroElegantAmpersand}>
+              <span className={styles.heroElegantAmpLine} />
+              <span className={styles.heroElegantAmpSymbol}>&</span>
+              <span className={styles.heroElegantAmpLine} />
             </div>
-            
-            <div className={styles.heroModernSubtitle}>
-              {f.hero.kicker}
-            </div>
-
-            {!countdown.passed && (
-              <div className={styles.heroModernCountdown} aria-live="polite">
-                <div className={styles.heroModernCountdownLabel}>
-                  {f.hero.countdownLabel || "Counting down"}
-                </div>
-                <div className={styles.heroModernCountdownGrid}>
-                  <div className={styles.heroModernCountdownItem}>
-                    <span className={styles.heroModernCountdownNum}>{countdown.days}</span>
-                    <span className={styles.heroModernCountdownText}>{f.hero.days}</span>
-                  </div>
-                  <div className={styles.heroModernCountdownItem}>
-                    <span className={styles.heroModernCountdownNum}>{countdown.hours}</span>
-                    <span className={styles.heroModernCountdownText}>{f.hero.hours}</span>
-                  </div>
-                  <div className={styles.heroModernCountdownItem}>
-                    <span className={styles.heroModernCountdownNum}>{countdown.mins}</span>
-                    <span className={styles.heroModernCountdownText}>{f.hero.mins}</span>
-                  </div>
-                </div>
-              </div>
-            )}
+            <h2 className={styles.heroElegantName}>Anushik</h2>
           </div>
 
-          {/* Right side - Event details */}
-          <div className={styles.heroModernRight}>
-            <div className={styles.heroModernCard}>
-              <div className={styles.heroModernDetail}>
-                <div className={styles.heroModernDetailIcon}>📅</div>
-                <div className={styles.heroModernDetailContent}>
-                  <div className={styles.heroModernDetailLabel}>Date</div>
-                  <div className={styles.heroModernDetailValue}>{f.hero.dateLine}</div>
+          <div className={styles.heroElegantDate}>
+            {f.hero.dateLine}
+          </div>
+
+          <div className={styles.heroElegantDivider}>
+            <span className={styles.heroElegantDividerLine} />
+            <span className={styles.heroElegantDividerDot}>◆</span>
+            <span className={styles.heroElegantDividerLine} />
+          </div>
+
+          {!countdown.passed && (
+            <div className={styles.heroElegantCountdown} aria-live="polite">
+              <div className={styles.heroElegantCountdownItems}>
+                <div className={styles.heroElegantCountdownItem}>
+                  <span className={styles.heroElegantCountdownNum}>{countdown.days}</span>
+                  <span className={styles.heroElegantCountdownLabel}>{f.hero.days}</span>
                 </div>
-              </div>
-              
-              <div className={styles.heroModernDetail}>
-                <div className={styles.heroModernDetailIcon}>🕐</div>
-                <div className={styles.heroModernDetailContent}>
-                  <div className={styles.heroModernDetailLabel}>Time</div>
-                  <div className={styles.heroModernDetailValue}>2:00 PM</div>
+                <span className={styles.heroElegantCountdownSep}>·</span>
+                <div className={styles.heroElegantCountdownItem}>
+                  <span className={styles.heroElegantCountdownNum}>{countdown.hours}</span>
+                  <span className={styles.heroElegantCountdownLabel}>{f.hero.hours}</span>
                 </div>
-              </div>
-              
-              <div className={styles.heroModernDetail}>
-                <div className={styles.heroModernDetailIcon}>📍</div>
-                <div className={styles.heroModernDetailContent}>
-                  <div className={styles.heroModernDetailLabel}>Venue</div>
-                  <div className={styles.heroModernDetailValue}>To be announced</div>
+                <span className={styles.heroElegantCountdownSep}>·</span>
+                <div className={styles.heroElegantCountdownItem}>
+                  <span className={styles.heroElegantCountdownNum}>{countdown.mins}</span>
+                  <span className={styles.heroElegantCountdownLabel}>{f.hero.mins}</span>
                 </div>
               </div>
             </div>
-          </div>
+          )}
+
+          <div className={styles.heroElegantOrnament}>✦</div>
         </div>
 
         <a
           href="#story"
-          className={styles.heroModernScroll}
+          className={styles.heroElegantScroll}
           aria-label={f.hero.chevronAria}
         >
-          <span className={styles.heroModernScrollText}>Explore</span>
-          <span className={styles.heroModernScrollIcon}>↓</span>
+          <IconChevronDown />
         </a>
       </section>
 
