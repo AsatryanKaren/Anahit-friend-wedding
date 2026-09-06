@@ -9,14 +9,14 @@ export const translations = {
       ru: "Русский",
     },
     meta: {
-      couple: "Կարեն Ասատրյան և Աննա Համբարձումյան",
+      couple: "Անդրանիկ Ասատրյան և Անուշիկ Համբարձումյան",
     },
     hero: {
       ariaLabel: "Հրավերի գլխավոր հատված",
       subtitle: "Մենք ամուսնանում ենք",
       names: {
-        first: "Կարեն Ասատրյան",
-        second: "Աննա Համբարձումյան",
+        first: "Անդրանիկ Ասատրյան",
+        second: "Անուշիկ Համբարձումյան",
       },
       dateLabel: "Օր",
       timeLabel: "Ժամ",
@@ -35,7 +35,7 @@ export const translations = {
         "Մեր կյանքի ամենանշանակալից պահերից մեկը ցանկանում ենք ապրել ձեզ հետ՝ աղոթքով ու օրհնությամբ։",
         "Մեզ համար մեծ պատիվ կլինի, եթե միանաք մեր պսակադրության արարողությանը և ձեր ներկայությամբ ջերմացնեք այս օրը։",
       ],
-      signature: "Սիրով՝ Կարեն և Աննա",
+      signature: "Սիրով՝ Անդրանիկ և Անուշիկ",
     },
     ceremony: {
       eyebrow: "Պսակադրություն",
@@ -76,7 +76,7 @@ export const translations = {
     closing: {
       title: "Սիրով սպասում ենք ձեզ",
       body: "Թող այդ օրը լցվի խաղաղությամբ, լույսով ու օրհնությամբ։",
-      namesLine: "Կարեն Ասատրյան · Աննա Համբարձումյան",
+      namesLine: "Անդրանիկ Ասատրյան · Անուշիկ Համբարձումյան",
     },
     footer: {
       ariaLabel: "Էջատակի նշում",
@@ -101,14 +101,14 @@ export const translations = {
       ru: "Русский",
     },
     meta: {
-      couple: "Karen Asatryan & Anna Hambardzumyan",
+      couple: "Andranik Asatryan & Anushik Hambardzumyan",
     },
     hero: {
       ariaLabel: "Invitation hero",
       subtitle: "We are getting married",
       names: {
-        first: "Karen Asatryan",
-        second: "Anna Hambardzumyan",
+        first: "Andranik Asatryan",
+        second: "Anushik Hambardzumyan",
       },
       dateLabel: "Date",
       timeLabel: "Time",
@@ -127,7 +127,7 @@ export const translations = {
         "We want to share one of the most meaningful moments of our lives with you, in prayer and blessing.",
         "We would be honoured if you joined us for our wedding ceremony and warmed this day with your presence.",
       ],
-      signature: "With love, Karen & Anna",
+      signature: "With love, Andranik & Anushik",
     },
     ceremony: {
       eyebrow: "Ceremony",
@@ -168,7 +168,7 @@ export const translations = {
     closing: {
       title: "We will wait for you with love",
       body: "May that day be filled with light, peace, and blessing.",
-      namesLine: "Karen Asatryan · Anna Hambardzumyan",
+      namesLine: "Andranik Asatryan · Anushik Hambardzumyan",
     },
     footer: {
       ariaLabel: "Footer note",
@@ -193,14 +193,14 @@ export const translations = {
       ru: "Русский",
     },
     meta: {
-      couple: "Карен Асатрян и Анна Амбарцумян",
+      couple: "Андраник Асатрян и Анушик Амбарцумян",
     },
     hero: {
       ariaLabel: "Главная часть приглашения",
       subtitle: "Мы женимся",
       names: {
-        first: "Карен Асатрян",
-        second: "Анна Амбарцумян",
+        first: "Андраник Асатрян",
+        second: "Анушик Амбарцумян",
       },
       dateLabel: "Дата",
       timeLabel: "Время",
@@ -219,7 +219,7 @@ export const translations = {
         "Один из самых значимых моментов нашей жизни мы хотим разделить с вами, в молитве и благословении.",
         "Для нас будет большой честью, если вы присоединитесь к нашему таинству венчания и согреете этот день своим присутствием.",
       ],
-      signature: "С любовью, Карен и Анна",
+      signature: "С любовью, Андраник и Анушик",
     },
     ceremony: {
       eyebrow: "Венчание",
@@ -260,7 +260,7 @@ export const translations = {
     closing: {
       title: "Ждем вас с любовью",
       body: "Пусть этот день наполнится миром, светом и благословением.",
-      namesLine: "Карен Асатрян · Анна Амбарцумян",
+      namesLine: "Андраник Асатрян · Анушик Амбарцумян",
     },
     footer: {
       ariaLabel: "Нижний колонтитул",

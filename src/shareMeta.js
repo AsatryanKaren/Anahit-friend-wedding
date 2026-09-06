@@ -4,31 +4,31 @@ const SHARE_IMAGE_PATH = "https://placehold.co/1200x630/fef5f3/b8736e?text=Weddi
 
 const SHARE_BY_LANG = {
   en: {
-    title: "Karen & Anna, Wedding, 24 June 2026",
+    title: "Andranik & Anushik, Wedding, 24 June 2026",
     description:
       "Join us in Yerevan, ceremony at Saint Anna Church, celebration at Art Village Armenia. Save the date.",
     ogLocale: "en_GB",
-    imageAlt: "Wedding invitation, Karen and Anna",
-    siteName: "Karen & Anna",
-    jsonLdName: "Karen & Anna, Wedding",
+    imageAlt: "Wedding invitation, Andranik and Anushik",
+    siteName: "Andranik & Anushik",
+    jsonLdName: "Andranik & Anushik, Wedding",
   },
   hy: {
-    title: "Կարեն և Աննա · հարսանիք, 24 հունիս 2026",
+    title: "Անդրանիկ և Անուշիկ · հարսանիք, 24 հունիս 2026",
     description:
       "Հրավիրում ենք Երևան՝ պսակադրություն Սուրբ Աննա եկեղեցում, խնջույք Art Village Armenia-ում։ Պահեք ամսաթիվը։",
     ogLocale: "hy_AM",
-    imageAlt: "Հարսանեկան հրավեր, Կարեն և Աննա",
-    siteName: "Կարեն և Աննա",
-    jsonLdName: "Կարեն և Աննա, հարսանիք",
+    imageAlt: "Հարսանեկան հրավեր, Անդրանիկ և Անուշիկ",
+    siteName: "Անդրանիկ և Անուշիկ",
+    jsonLdName: "Անդրանիկ և Անուշիկ, հարսանիք",
   },
   ru: {
-    title: "Карен и Анна · Свадьба, 24 июня 2026",
+    title: "Андраник и Анушик · Свадьба, 24 июня 2026",
     description:
       "Приглашаем в Ереван: церемония венчания в церкви Святой Анны, торжество в Art Village Armenia.",
     ogLocale: "ru_RU",
-    imageAlt: "Свадебное приглашение, Карен и Анна",
-    siteName: "Карен и Анна",
-    jsonLdName: "Карен и Анна, Свадьба",
+    imageAlt: "Свадебное приглашение, Андраник и Анушик",
+    siteName: "Андраник и Анушик",
+    jsonLdName: "Андраник и Анушик, Свадьба",
   },
 };
 

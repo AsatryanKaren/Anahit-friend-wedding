@@ -237,11 +237,11 @@ export const figmaByLang = {
       schedule: "Schedule",
       roots: "Roots",
     },
-    logo: { karen: "Karen", anna: "Anna" },
+    logo: { karen: "Andranik", anna: "Anushik" },
     hero: {
       ariaSection: "Welcome",
       kicker: "You are invited to the wedding of",
-      title: "Karen & Anna",
+      title: "Andranik & Anushik",
       dateLine: "June 24, 2026",
       thankYouPassed: "With love, thank you for celebrating with us.",
       days: "Days",
@@ -256,7 +256,7 @@ export const figmaByLang = {
       heading: "How we found each other, and kept choosing one another.",
       lead:
         "It began in the most ordinary way, during a work meeting in the office, where a conversation lingered just a little longer than expected and the professional line quietly softened into curiosity, then friendship, and eventually something neither of us saw coming. What started as routine grew into a connection no agenda or calendar could predict, unfolding naturally until a simple, real-life moment turned everything into a shared future, honest, unexpected, and deeply ours.",
-      altPortrait: "Karen and Anna, portrait",
+      altPortrait: "Andranik and Anushik, portrait",
     },
     events: {
       eyebrow: "The Celebration",
@@ -325,8 +325,8 @@ export const figmaByLang = {
       li3: "Looking ahead to the memories we'll make, anniversaries, holidays, and ordinary Tuesdays.",
     },
     footer: {
-      names: "Karen & Anna",
-      legal: "© 2026 Karen & Anna. Made with love.",
+      names: "Andranik & Anushik",
+      legal: "© 2026 Andranik & Anushik. Made with love.",
     },
   },
 
@@ -340,11 +340,11 @@ export const figmaByLang = {
       schedule: "Ծրագիր",
       roots: "Արմատներ",
     },
-    logo: { karen: "Կարեն", anna: "Աննա" },
+    logo: { karen: "Անդրանիկ", anna: "Անուշիկ" },
     hero: {
       ariaSection: "Բարի գալուստ",
       kicker: "Սիրով հրավիրում ենք մեր հարսանիքին",
-      title: "Կարեն և Աննա",
+      title: "Անդրանիկ և Անուշիկ",
       dateLine: "24 հունիսի 2026",
       thankYouPassed:
         "Սիրով շնորհակալ ենք, որ մեզ հետ կիսեցիք մեր ուրախությունը։",
@@ -360,7 +360,7 @@ export const figmaByLang = {
       heading: "Ինչպես գտանք և ընտրեցինք միմյանց։",
       lead:
         "Ամեն ինչ սկսվեց ամենասովորական ձևով՝ գրասենյակում աշխատանքային հանդիպման ժամանակ, երբ զրույցը մի քիչ ավելի երկար տևեց, քան սովորաբար, և մասնագիտական սահմանը կամաց-կամաց դարձավ հետաքրքրություն, հետո՝ ընկերություն, և վերջապես մի բան, որին ոչ մեկս չէինք սպասում։ Այն, ինչ սկսվել էր որպես ամենօրյա, վերածվեց կապի, որ ծրագրով կամ օրացույցով հնարավոր չէր կանխատեսել, և բացվելով բնական ճանապարհով՝ մի պարզ, իրական կյանքի պահը ամեն ինչ դարձրեց համատեղ ապագա՝ անկեղծ, անսպասելի և խորապես մեր։",
-      altPortrait: "Կարեն և Աննա",
+      altPortrait: "Անդրանիկ և Անուշիկ",
     },
     events: {
       eyebrow: "Տոնակատարությունը",
@@ -427,8 +427,8 @@ export const figmaByLang = {
       li3: "Անհամբեր սպասում ենք այն հուշերին, տարեդարձերին, տոներին ու հասարակ երեքշաբթիներին, որոնք դեռ պիտի ստեղծենք։",
     },
     footer: {
-      names: "Կարեն և Աննա",
-      legal: "© 2026 Կարեն և Աննա։ Ստեղծված է սիրով։",
+      names: "Անդրանիկ և Անուշիկ",
+      legal: "© 2026 Անդրանիկ և Անուշիկ։ Ստեղծված է սիրով։",
     },
   },
 
@@ -442,11 +442,11 @@ export const figmaByLang = {
       schedule: "Программа",
       roots: "Корни",
     },
-    logo: { karen: "Карен", anna: "Анна" },
+    logo: { karen: "Андраник", anna: "Анушик" },
     hero: {
       ariaSection: "Добро пожаловать",
       kicker: "С любовью приглашаем на нашу свадьбу",
-      title: "Карен и Анна",
+      title: "Андраник и Анушик",
       dateLine: "24 июня 2026",
       thankYouPassed:
         "С любовью благодарим за то, что разделили с нами нашу радость.",
@@ -462,7 +462,7 @@ export const figmaByLang = {
       heading: "Как мы нашли и выбрали друг друга.",
       lead:
         "Всё началось самым обыкновенным образом — на рабочей встрече в офисе, когда разговор затянулся чуть дольше обычного и профессиональная граница незаметно смягчилась в интерес, затем в дружбу и наконец в нечто такое, чего мы сами не ожидали. То, что казалось рутиной, переросло в связь, которую не предугадал бы ни план, ни календарь, и всё развивалось естественно, пока простой, настоящий жизненный миг не превратил всё в общее будущее — честное, неожиданное и по-настоящему наше.",
-      altPortrait: "Карен и Анна",
+      altPortrait: "Андраник и Анушик",
     },
     events: {
       eyebrow: "Торжество",
@@ -529,8 +529,8 @@ export const figmaByLang = {
       li3: "С нетерпением ждем воспоминаний, годовщин, праздников и простых вторников, которые нам еще предстоит создать.",
     },
     footer: {
-      names: "Карен и Анна",
-      legal: "© 2026 Карен и Анна. Сделано с любовью.",
+      names: "Андраник и Анушик",
+      legal: "© 2026 Андраник и Анушик. Сделано с любовью.",
     },
   },
 };
