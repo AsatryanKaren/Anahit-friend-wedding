@@ -2132,6 +2132,77 @@
   display: block;
 }
 
+/* Scroll-synced animated line with heart */
+.scheduleScrollLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: rgba(184, 115, 110, 0.2);
+  border-radius: 2px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.scheduleScrollLineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 182, 193, 0.8),
+    rgba(255, 105, 135, 0.9),
+    rgba(220, 20, 60, 0.95)
+  );
+  box-shadow: 0 0 10px rgba(220, 20, 60, 0.4);
+  transition: height 0.1s linear;
+  border-radius: 2px;
+}
+
+.scheduleScrollHeart {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  z-index: 3;
+  filter: drop-shadow(0 2px 8px rgba(220, 20, 60, 0.4));
+  animation: scheduleHeartBeat 1.5s ease-in-out infinite;
+  transition: top 0.1s linear;
+}
+
+@keyframes scheduleHeartBeat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  14% {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+  28% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  42% {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+  56% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .scheduleScrollLine {
+    width: 2px;
+  }
+  
+  .scheduleScrollHeart {
+    font-size: 20px;
+  }
+}
+
 .scheduleList {
   list-style: none;
   margin: 0;
@@ -3404,4 +3475,145 @@
   color: rgba(45, 24, 32, 0.5);
   margin: 0;
   letter-spacing: 0.02em;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+  /* Story Section */
+  .storyNew {
+    padding: clamp(60px, 10vw, 80px) 20px;
+  }
+  
+  .storyNewHeader {
+    margin-bottom: 48px;
+  }
+  
+  .storyNewContent {
+    gap: 36px;
+  }
+  
+  /* Events Section */
+  .eventsNew {
+    padding: clamp(60px, 10vw, 80px) 20px;
+  }
+  
+  .eventsNewHeader {
+    margin-bottom: 56px;
+  }
+  
+  .eventsNewCards {
+    gap: 24px;
+  }
+  
+  .eventsNewCard {
+    padding: 24px;
+    gap: 20px;
+  }
+  
+  .eventsNewCardHeader {
+    gap: 10px;
+    padding-bottom: 16px;
+  }
+  
+  .eventsNewCardIcon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Attire Section */
+  .attireNew {
+    padding: clamp(60px, 10vw, 80px) 20px;
+  }
+  
+  .attireNewTop {
+    margin-bottom: 48px;
+  }
+  
+  .attireNewPalette {
+    padding: clamp(24px, 5vw, 32px);
+  }
+  
+  .attireNewPaletteHeader {
+    margin-bottom: 32px;
+  }
+  
+  .attireNewPaletteGrid {
+    gap: 32px;
+  }
+  
+  .attireNewSwatchColor {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Roots Section */
+  .rootsNew {
+    padding: clamp(60px, 10vw, 80px) 20px;
+  }
+  
+  .rootsNewHeader {
+    margin-bottom: 48px;
+  }
+  
+  .rootsNewContent {
+    gap: 40px;
+  }
+  
+  .rootsNewVisualFrame {
+    padding: 24px;
+  }
+  
+  /* Footer */
+  .footerNew {
+    padding: clamp(48px, 8vw, 60px) 20px clamp(32px, 6vw, 40px);
+  }
+  
+  .footerNewContent {
+    gap: 24px;
+  }
+  
+  .footerNewLinks {
+    gap: 16px 24px;
+  }
+  
+  /* Hero Section Mobile */
+  .heroElegantCountdownItems {
+    gap: 16px;
+  }
+  
+  .heroElegantCountdownItem {
+    min-width: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens */
+  .storyNewOrnament,
+  .eventsNewOrnament,
+  .attireNewOrnament,
+  .rootsNewOrnament,
+  .footerNewOrnament {
+    font-size: 24px;
+  }
+  
+  .heroElegantCountdown {
+    padding: 20px 24px;
+  }
+  
+  .heroElegantCountdownNum {
+    font-size: clamp(32px, 8vw, 40px);
+  }
+  
+  .eventsNewCard {
+    padding: 20px;
+  }
+  
+  .attireNewPalette {
+    padding: 20px;
+  }
+  
+  .footerNewLinks {
+    flex-direction: column;
+    gap: 12px;
+  }
 }

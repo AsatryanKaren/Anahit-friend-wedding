@@ -15,6 +15,7 @@ import { ScheduleVine } from "./components/ScheduleVine.jsx";
 import { LanguageSwitcher } from "./components/LanguageSwitcher/LanguageSwitcher.jsx";
 import { useI18n } from "./i18n/LanguageContext.jsx";
 import styles from "./FigmaInvite.module.css";
+import { useEffect, useRef } from "react";
 
 const WEDDING_AT = new Date("2026-06-24T14:00:00");
 
@@ -58,6 +59,47 @@ export default function FigmaInvite() {
 
   const motion = reducedMotion ? "reduce" : "full";
   const navIds = NAV_IDS;
+  
+  const scheduleLineRef = useRef(null);
+  const scheduleHeartRef = useRef(null);
+  const scheduleTrackRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scheduleLineRef.current || !scheduleHeartRef.current || !scheduleTrackRef.current) return;
+      
+      const scheduleTrack = scheduleTrackRef.current;
+      const rect = scheduleTrack.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      const trackTop = rect.top;
+      const trackHeight = rect.height;
+      const trackBottom = rect.bottom;
+      
+      if (trackBottom < 0 || trackTop > windowHeight) {
+        return;
+      }
+      
+      const visibleTop = Math.max(0, -trackTop);
+      const visibleBottom = Math.min(trackHeight, windowHeight - trackTop);
+      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+      const scrollProgress = visibleHeight / trackHeight;
+      
+      const percentage = Math.min(100, Math.max(0, scrollProgress * 100));
+      
+      scheduleLineRef.current.style.height = `${percentage}%`;
+      scheduleHeartRef.current.style.top = `${percentage}%`;
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   return (
     <div className={styles.page} data-motion={motion}>
@@ -436,8 +478,12 @@ export default function FigmaInvite() {
               </header>
             </Reveal>
             <div className={styles.scheduleFlow}>
-              <div className={styles.scheduleTrack}>
+              <div className={styles.scheduleTrack} ref={scheduleTrackRef}>
                 <ScheduleVine className={styles.scheduleVine} />
+                <div className={styles.scheduleScrollLine}>
+                  <div className={styles.scheduleScrollLineProgress} ref={scheduleLineRef}></div>
+                  <div className={styles.scheduleScrollHeart} ref={scheduleHeartRef}>❤️</div>
+                </div>
                 <ol className={styles.scheduleList}>
                   {f.schedule.rows.map((row, i) => {
                     const side =
