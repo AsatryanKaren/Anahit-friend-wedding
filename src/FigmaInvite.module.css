@@ -934,6 +934,321 @@
   opacity: 1;
 }
 
+/* ===== MODERN HERO REDESIGN ===== */
+.heroModern {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 60px;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #fef5f3 50%,
+    #fff 100%
+  );
+}
+
+.heroModernBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(245, 212, 207, 0.2) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(203, 108, 117, 0.15) 0%,
+      transparent 40%
+    );
+  pointer-events: none;
+}
+
+/* Main container - horizontal layout */
+.heroModernContainer {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+  opacity: 0;
+  animation: heroModernFadeIn 1s ease-out 0.2s forwards;
+}
+
+@media (min-width: 900px) {
+  .heroModernContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+/* Left side - Names */
+.heroModernLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .heroModernLeft {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.heroModernNames {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heroModernName {
+  font-family: var(--font-serif);
+  font-size: clamp(42px, 9vw, 80px);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  color: #2d1820;
+  margin: 0;
+}
+
+.heroModernDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+@media (min-width: 900px) {
+  .heroModernDivider {
+    justify-content: flex-start;
+  }
+}
+
+.heroModernDividerLine {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(184, 115, 110, 0.3),
+    rgba(184, 115, 110, 0.6),
+    rgba(184, 115, 110, 0.3)
+  );
+}
+
+.heroModernSubtitle {
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(184, 115, 110, 0.8);
+  font-weight: 500;
+}
+
+.heroModernCountdown {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 32px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(184, 115, 110, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.heroModernCountdownLabel {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(184, 115, 110, 0.7);
+  font-weight: 600;
+}
+
+.heroModernCountdownGrid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .heroModernCountdownGrid {
+    justify-content: flex-start;
+  }
+}
+
+.heroModernCountdownItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.heroModernCountdownNum {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 400;
+  color: #2d1820;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.heroModernCountdownText {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(184, 115, 110, 0.7);
+  font-weight: 500;
+}
+
+/* Right side - Details */
+.heroModernRight {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .heroModernRight {
+    justify-content: flex-end;
+  }
+}
+
+.heroModernCard {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(184, 115, 110, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heroModernDetail {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(184, 115, 110, 0.1);
+}
+
+.heroModernDetail:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.heroModernDetailIcon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.heroModernDetailContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.heroModernDetailLabel {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(184, 115, 110, 0.7);
+  font-weight: 600;
+}
+
+.heroModernDetailValue {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #2d1820;
+  font-weight: 400;
+}
+
+/* Scroll hint */
+.heroModernScroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: rgba(184, 115, 110, 0.6);
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.heroModernScroll:hover {
+  color: rgba(184, 115, 110, 0.9);
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.heroModernScrollText {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.heroModernScrollIcon {
+  font-size: 20px;
+  animation: heroModernBounce 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes heroModernFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroModernBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .heroModern,
+  .heroModernContainer,
+  .heroModernScroll,
+  .heroModernScrollIcon {
+    animation: none;
+  }
+  
+  .heroModernScroll:hover {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 600px) and (max-width: 899px) {
+  .heroModernCard {
+    max-width: 500px;
+  }
+}
+
 /* Our story */
 .story {
   background: var(--cream);
