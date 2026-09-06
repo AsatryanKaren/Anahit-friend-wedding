@@ -482,8 +482,8 @@ export default function FigmaInvite() {
                 <ScheduleVine className={styles.scheduleVine} />
                 <div className={styles.scheduleScrollLine}>
                   <div className={styles.scheduleScrollLineProgress} ref={scheduleLineRef}></div>
-                  <div className={styles.scheduleScrollHeart} ref={scheduleHeartRef}>❤️</div>
                 </div>
+                <div className={styles.scheduleScrollHeart} ref={scheduleHeartRef}>❤️</div>
                 <ol className={styles.scheduleList}>
                   {f.schedule.rows.map((row, i) => {
                     const side =
