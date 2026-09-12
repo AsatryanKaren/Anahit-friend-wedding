@@ -1,30 +1,30 @@
 /** Social / messaging link previews: absolute URLs for og:image and canonical */
 
-const SHARE_IMAGE_PATH = "https://placehold.co/1200x630/fef5f3/b8736e?text=Wedding+Invitation";
+const SHARE_IMAGE_PATH = "/social-share.jpg";
 
 const SHARE_BY_LANG = {
   en: {
-    title: "Andranik & Anushik, Wedding, 24 June 2026",
+    title: "Andranik & Anushik, Wedding, 26 October 2026",
     description:
-      "Join us in Yerevan, ceremony at Saint Anna Church, celebration at Art Village Armenia. Save the date.",
+      "Join us in Yerevan, ceremony at Surp Mariam Astvatsatsin Church (Nork Marash), celebration at Vivaldi Hall. Save the date.",
     ogLocale: "en_GB",
     imageAlt: "Wedding invitation, Andranik and Anushik",
     siteName: "Andranik & Anushik",
     jsonLdName: "Andranik & Anushik, Wedding",
   },
   hy: {
-    title: "Անդրանիկ և Անուշիկ · հարսանիք, 24 հունիս 2026",
+    title: "Անդրանիկ և Անուշիկ · հարսանիք, 26 հոկտեմբեր 2026",
     description:
-      "Հրավիրում ենք Երևան՝ պսակադրություն Սուրբ Աննա եկեղեցում, խնջույք Art Village Armenia-ում։ Պահեք ամսաթիվը։",
+      "Հրավիրում ենք Երևան՝ պսակադրություն Մարիամ Աստվածածին եկեղեցում (Նորք Մարաշ), խնջույք Վիվալդի Հոլլում։ Պահեք ամսաթիվը։",
     ogLocale: "hy_AM",
     imageAlt: "Հարսանեկան հրավեր, Անդրանիկ և Անուշիկ",
     siteName: "Անդրանիկ և Անուշիկ",
     jsonLdName: "Անդրանիկ և Անուշիկ, հարսանիք",
   },
   ru: {
-    title: "Андраник и Анушик · Свадьба, 24 июня 2026",
+    title: "Андраник и Анушик · Свадьба, 26 октября 2026",
     description:
-      "Приглашаем в Ереван: церемония венчания в церкви Святой Анны, торжество в Art Village Armenia.",
+      "Приглашаем в Ереван: венчание в церкви Сурб Мариам Аствацацин (Норк Мараш), торжество в Vivaldi Hall.",
     ogLocale: "ru_RU",
     imageAlt: "Свадебное приглашение, Андраник и Анушик",
     siteName: "Андраник и Анушик",
@@ -97,26 +97,25 @@ export function applyShareMeta(lang = "en") {
     name: share.jsonLdName,
     description: share.description,
     image: imageUrl,
-    startDate: "2026-06-24T14:00:00+04:00",
+    startDate: "2026-10-26T14:00:00+04:00",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     location: [
       {
         "@type": "Place",
-        name: "Saint Anna Church",
+        name: "Surp Mariam Astvatsatsin Church",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Abovyan Street",
-          addressLocality: "Yerevan",
+          addressLocality: "Nork Marash, Yerevan",
           addressCountry: "AM",
         },
       },
       {
         "@type": "Place",
-        name: "Art Village Armenia",
+        name: "Vivaldi Hall",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Ashtarak, Aragatsotn",
+          addressLocality: "Yerevan",
           addressCountry: "AM",
         },
       },

@@ -4,171 +4,134 @@
 
 const scheduleEn = [
   {
-    time: "13:45",
-    datetime: "2026-06-24T13:45:00",
-    title: "Ceremony",
-    place: "Saint Anna Church, Abovyan St, Yerevan",
+    time: "10:00",
+    datetime: "2026-10-26T10:00:00",
+    title: "Groom's home",
+    place: "Family gathering and blessing",
+    detail: "The groom gets ready, surrounded by family and close friends.",
+    tag: "Groom",
+  },
+  {
+    time: "12:00",
+    datetime: "2026-10-26T12:00:00",
+    title: "Bride's home",
+    place: "Family gathering and blessing",
+    detail:
+      "The bride waits for the groom's arrival, surrounded by her loved ones.",
+    tag: "Bride",
+  },
+  {
+    time: "14:00",
+    datetime: "2026-10-26T14:00:00",
+    title: "Wedding ceremony",
+    place: "Surp Mariam Astvatsatsin Church, Nork Marash",
     detail:
       "We exchange our vows surrounded by family and friends. Please silence phones and enjoy the moment with us.",
     tag: "Vows",
   },
   {
+    time: "17:00",
+    datetime: "2026-10-26T17:00:00",
+    title: "Civil ceremony",
+    place: "Vivaldi Hall",
+    detail: "The official registration of our marriage.",
+    tag: "Registration",
+  },
+  {
     time: "17:30",
-    datetime: "2026-06-24T18:00:00",
-    title: "Guest arrival at the venue",
-    place: "Art Village Armenia, Ashtarak",
-    detail:
-      "Welcome drinks, find your table, and settle in among the gardens before the evening unfolds.",
-    tag: "Arrival",
-  },
-  {
-    time: "18:30",
-    datetime: "2026-06-24T18:30:00",
-    title: "Dinner is served",
-    place: "Art Village, celebration spaces",
-    detail:
-      "Dinner, heartfelt toasts from our nearest and dearest, and a warm evening together.",
+    datetime: "2026-10-26T17:30:00",
+    title: "Reception",
+    place: "",
+    detail: "The celebration continues with family and friends.",
     tag: "Feast",
-  },
-  {
-    time: "20:00",
-    datetime: "2026-06-24T20:00:00",
-    title: "Sparkling toast",
-    place: "Art Village",
-    detail:
-      "A glass of something sparkling with everyone, cheers to you for being here.",
-    tag: "Toast",
-  },
-  {
-    time: "20:30",
-    datetime: "2026-06-24T20:30:00",
-    title: "Open dancing",
-    place: "Terrace & gardens",
-    detail: "DJ sets until late; cozy wraps if the evening turns cool.",
-    tag: "Party",
-  },
-  {
-    time: "21:00",
-    datetime: "2026-06-24T21:00:00",
-    title: "Cake",
-    place: "Art Village Hall",
-    detail:
-      "Something sweet before the night carries on, join us for the cutting.",
-    tag: "Cake",
   },
 ];
 
 const scheduleHy = [
   {
+    time: "10:00",
+    datetime: "2026-10-26T10:00:00",
+    title: "Փեսայի տուն",
+    place: "Հավաքույթ և օրհնանք փեսայի ընտանիքում",
+    detail: "Փեսան պատրաստվում է իր հարազատների և մտերիմ ընկերների հետ։",
+    tag: "Փեսա",
+  },
+  {
+    time: "12:00",
+    datetime: "2026-10-26T12:00:00",
+    title: "Հարսի տուն",
+    place: "Հավաքույթ և օրհնանք հարսի ընտանիքում",
+    detail: "Հարսը սպասում է փեսայի ժամանմանը՝ շրջապատված իր հարազատներով։",
+    tag: "Հարս",
+  },
+  {
     time: "14:00",
-    datetime: "2026-06-24T14:00:00",
+    datetime: "2026-10-26T14:00:00",
     title: "Պսակադրություն",
-    place: "Սուրբ Աննա եկեղեցի, Աբովյան փողոց, Երևան",
+    place: "Մարիամ Աստվածածին եկեղեցի, Նորք Մարաշ",
     detail:
       "Մենք խոստումներ կտանք մեր ընտանիքի և ընկերների ներկայությամբ։ Խնդրում ենք անջատել հեռախոսների ձայնը և վայելել այս պահը մեզ հետ։",
-    tag: "Երդումներ",
+    tag: "Երդում",
+  },
+  {
+    time: "17:00",
+    datetime: "2026-10-26T17:00:00",
+    title: "Զագսի արարողություն",
+    place: "Վիվալդի Հոլլ",
+    detail: "Ամուսնության պաշտոնական գրանցում։",
+    tag: "Գրանցում",
   },
   {
     time: "17:30",
-    datetime: "2026-06-24T17:30:00",
-    title: "Հյուրերի ժամանում",
-    place: "Art Village Armenia, Աշտարակ",
-    detail:
-      "Զովացուցիչ ըմպելիքներ: Գտեք ձեր սեղանը և տեղավորվեք այգիներում՝ նախքան երեկոյի սկիզբը։",
-    tag: "Ժամանում",
-  },
-  {
-    time: "18:30",
-    datetime: "2026-06-24T18:30:00",
-    title: "Ընթրիք",
-    place: "Art Village",
-    detail:
-      "Ընթրիք, սրտանց կենացներ մեր ամենամտերիմներից և տաք երեկո բոլորի հետ միասին։",
-    tag: "Խնջույք",
-  },
-  {
-    time: "20:00",
-    datetime: "2026-06-24T20:00:00",
-    title: "Շամպայն",
-    place: "Art Village",
-    detail:
-      "Մի բաժակ շամպայն բոլորի հետ՝ ի նշան շնորհակալության ձեր ներկայության համար։",
-    tag: "Շամպայն",
-  },
-  {
-    time: "20:30",
-    datetime: "2026-06-24T20:30:00",
-    title: "Ազատ պար",
-    place: "Բացօթյա պատշգամբ և այգիներ",
-    detail:
-      "DJ-ի երաժշտություն մինչև ուշ գիշեր: Եթե երեկոն զովանա, կարող եք օգտագործել տաք ծածկոցներ։",
-    tag: "Երեկույթ",
-  },
-  {
-    time: "21:00",
-    datetime: "2026-06-24T21:00:00",
-    title: "Տորթ",
-    place: "Art Village սրահ",
-    detail:
-      "Քաղցր ակնթարթ նախքան երեկոյի շարունակությունը. միացեք մեզ տորթի կտրման արարողությանը։",
-    tag: "Տորթ",
+    datetime: "2026-10-26T17:30:00",
+    title: "Տոնական Խնջույք",
+    place: "",
+    detail: "Տոնակատարությունը շարունակվում է հարազատների և ընկերների հետ։",
+    tag: "Տոնական Խնջույք",
   },
 ];
 
 const scheduleRu = [
   {
+    time: "10:00",
+    datetime: "2026-10-26T10:00:00",
+    title: "Дом жениха",
+    place: "Сбор и благословение в семье жениха",
+    detail: "Жених готовится в окружении родных и близких друзей.",
+    tag: "Жених",
+  },
+  {
+    time: "12:00",
+    datetime: "2026-10-26T12:00:00",
+    title: "Дом невесты",
+    place: "Сбор и благословение в семье невесты",
+    detail: "Невеста ждёт жениха в окружении своих близких.",
+    tag: "Невеста",
+  },
+  {
     time: "14:00",
-    datetime: "2026-06-24T14:00:00",
+    datetime: "2026-10-26T14:00:00",
     title: "Венчание",
-    place: "Церковь Святой Анны, ул. Абовяна, Ереван",
+    place: "Церковь Сурб Мариам Аствацацин, Норк Мараш",
     detail:
       "Мы обменяемся клятвами в окружении семьи и друзей. Пожалуйста, переведите телефоны в беззвучный режим и насладитесь этим моментом вместе с нами.",
     tag: "Обеты",
   },
   {
+    time: "17:00",
+    datetime: "2026-10-26T17:00:00",
+    title: "Регистрация брака",
+    place: "Vivaldi Hall",
+    detail: "Официальная регистрация нашего брака.",
+    tag: "Регистрация",
+  },
+  {
     time: "17:30",
-    datetime: "2026-06-24T17:30:00",
-    title: "Прибытие гостей",
-    place: "Art Village Armenia, Аштарак",
-    detail:
-      "Приветственные напитки. Вы сможете найти свой стол и отдохнуть в садах перед началом вечера.",
-    tag: "Прибытие",
-  },
-  {
-    time: "18:30",
-    datetime: "2026-06-24T18:30:00",
-    title: "Ужин",
-    place: "Art Village, банкетные залы",
-    detail:
-      "Ужин, искренние тосты от наших самых близких и тёплый вечер вместе.",
-    tag: "Ужин",
-  },
-  {
-    time: "20:00",
-    datetime: "2026-06-24T20:00:00",
-    title: "Игристое вино и тост",
-    place: "Art Village",
-    detail:
-      "Бокал игристого в кругу гостей — в знак благодарности за то, что вы здесь.",
-    tag: "Тост",
-  },
-  {
-    time: "20:30",
-    datetime: "2026-06-24T20:30:00",
-    title: "Свободные танцы",
-    place: "Открытая терраса и сады",
-    detail:
-      "Сеты от диджея до поздней ночи; если станет прохладно, можно воспользоваться уютными пледами.",
-    tag: "Вечеринка",
-  },
-  {
-    time: "21:00",
-    datetime: "2026-06-24T21:00:00",
-    title: "Торт",
-    place: "Зал Art Village",
-    detail:
-      "Сладкое мгновение перед продолжением ночи: присоединяйтесь к нам для разрезания торта.",
-    tag: "Торт",
+    datetime: "2026-10-26T17:30:00",
+    title: "Банкет",
+    place: "",
+    detail: "Праздник продолжается в кругу семьи и друзей.",
+    tag: "Банкет",
   },
 ];
 
@@ -179,6 +142,8 @@ const paletteWomenEn = [
   { hex: "#b8d4e3", name: "Light blue" },
   { hex: "#8b7d82", name: "Dusty mauve" },
   { hex: "#4a6f5c", name: "Eucalyptus" },
+  { hex: "#cb6c75", name: "Rose" },
+  { hex: "#f5d4cf", name: "Petal pink" },
 ];
 
 const paletteWomenHy = [
@@ -188,6 +153,8 @@ const paletteWomenHy = [
   { hex: "#b8d4e3", name: "Թեթև կապույտ" },
   { hex: "#8b7d82", name: "Մուգ մանուշակագույն" },
   { hex: "#4a6f5c", name: "Եվկալիպտ" },
+  { hex: "#cb6c75", name: "Վարդագույն" },
+  { hex: "#f5d4cf", name: "Բաց վարդագույն" },
 ];
 
 const paletteMenEn = [
@@ -215,6 +182,8 @@ const paletteWomenRu = [
   { hex: "#b8d4e3", name: "Светло-голубой" },
   { hex: "#8b7d82", name: "Темно-лиловый" },
   { hex: "#4a6f5c", name: "Эвкалипт" },
+  { hex: "#cb6c75", name: "Розовый" },
+  { hex: "#f5d4cf", name: "Нежно-розовый" },
 ];
 
 const paletteMenRu = [
@@ -236,13 +205,15 @@ export const figmaByLang = {
       attire: "Attire",
       schedule: "Schedule",
       roots: "Roots",
+      rsvp: "RSVP",
     },
     logo: { first: "Andranik", second: "Anushik" },
     hero: {
       ariaSection: "Welcome",
       kicker: "You are invited to the wedding of",
       title: "Andranik & Anushik",
-      dateLine: "June 24, 2026",
+      dateLine: "October 26, 2026",
+      countdownIntro: "Now only time keeps us apart, and all that remains is",
       thankYouPassed: "With love, thank you for celebrating with us.",
       days: "Days",
       hours: "Hours",
@@ -254,8 +225,9 @@ export const figmaByLang = {
     story: {
       eyebrow: "Our Journey",
       heading: "How we found each other, and kept choosing one another.",
-      lead:
+      lead: [
         "It began in the most ordinary way, during a work meeting in the office, where a conversation lingered just a little longer than expected and the professional line quietly softened into curiosity, then friendship, and eventually something neither of us saw coming. What started as routine grew into a connection no agenda or calendar could predict, unfolding naturally until a simple, real-life moment turned everything into a shared future, honest, unexpected, and deeply ours.",
+      ],
       altPortrait: "Andranik and Anushik, portrait",
     },
     events: {
@@ -266,14 +238,14 @@ export const figmaByLang = {
         "A sacred union amidst the soft whispers of stone and spirit.",
       celebrationTitle: "The Celebration",
       celebrationQuote:
-        "Dining where gardens and open sky meet, at Art Village Armenia.",
-      openMaps: "Open in Google Maps",
-      ceremonyVenue: "Saint Anna Church",
-      ceremonyAddress: "Abovyan St, Yerevan, Armenia",
-      receptionVenue: "Art Village Armenia",
-      receptionAddress: "Aragatsotn Province, Ashtarak Municipality, plot 25",
-      mapAltCeremony: "Saint Anna Church (Katoghike), Abovyan Street, Yerevan",
-      mapAltReception: "Art Village Armenia, event venue and gardens",
+        "An elegant evening of vows, toasts, and dancing at Vivaldi Hall.",
+      getDirections: "Get directions",
+      ceremonyVenue: "Surp Mariam Astvatsatsin Church",
+      ceremonyAddress: "Nork Marash, Yerevan, Armenia",
+      receptionVenue: "Vivaldi Hall",
+      receptionAddress: "Yerevan, Armenia",
+      mapAltCeremony: "Surp Mariam Astvatsatsin Church, Nork Marash, Yerevan",
+      mapAltReception: "Vivaldi Hall, Yerevan",
     },
     attire: {
       eyebrow: "Dress the part",
@@ -323,6 +295,29 @@ export const figmaByLang = {
       li1: "Honoring the parents and elders who taught us how to love well.",
       li2: "Celebrating cousins, siblings, and friends who already feel like kin.",
       li3: "Looking ahead to the memories we'll make, anniversaries, holidays, and ordinary Tuesdays.",
+      altPortrait: "Andranik and Anushik, hand in hand by the water",
+    },
+    rsvp: {
+      eyebrow: "RSVP",
+      heading: "Kindly confirm your attendance",
+      intro:
+        "Please confirm your attendance and fill out the form below by October 5, 2026.",
+      nameLabel: "First name",
+      surnameLabel: "Last name",
+      guestOfLabel: "Whose guest are you",
+      guestOfGroom: "Groom's",
+      guestOfBride: "Bride's",
+      guestOfBoth: "Both's",
+      guestCountLabel: "Number of guests",
+      songLabel: "Request a song for the dance floor",
+      attendingYes: "I'll be there",
+      attendingNo: "Sorry, I can't make it",
+      submit: "Confirm",
+      submitting: "Sending…",
+      successTitle: "Thank you!",
+      successMessage: "Your response has been recorded. We can't wait to celebrate with you.",
+      errorMessage: "Something went wrong sending your response. Please try again.",
+      requiredError: "Please fill in your name, surname, and let us know if you're attending.",
     },
     footer: {
       names: "Andranik & Anushik",
@@ -339,13 +334,15 @@ export const figmaByLang = {
       attire: "Դրես-կոդ",
       schedule: "Ծրագիր",
       roots: "Արմատներ",
+      rsvp: "Հաստատում",
     },
     logo: { first: "Անդրանիկ", second: "Անուշիկ" },
     hero: {
       ariaSection: "Բարի գալուստ",
       kicker: "Սիրով հրավիրում ենք մեր հարսանիքին",
       title: "Անդրանիկ և Անուշիկ",
-      dateLine: "24 հունիսի 2026",
+      dateLine: "26 հոկտեմբերի 2026",
+      countdownIntro: "Հիմա մեզ բաժանողը միայն ժամանակն է, որին մնաց՝",
       thankYouPassed:
         "Սիրով շնորհակալ ենք, որ մեզ հետ կիսեցիք մեր ուրախությունը։",
       days: "Օր",
@@ -358,8 +355,15 @@ export const figmaByLang = {
     story: {
       eyebrow: "Մեր ճանապարհը",
       heading: "Ինչպես գտանք և ընտրեցինք միմյանց։",
-      lead:
-        "Ամեն ինչ սկսվեց ամենասովորական ձևով՝ գրասենյակում աշխատանքային հանդիպման ժամանակ, երբ զրույցը մի քիչ ավելի երկար տևեց, քան սովորաբար, և մասնագիտական սահմանը կամաց-կամաց դարձավ հետաքրքրություն, հետո՝ ընկերություն, և վերջապես մի բան, որին ոչ մեկս չէինք սպասում։ Այն, ինչ սկսվել էր որպես ամենօրյա, վերածվեց կապի, որ ծրագրով կամ օրացույցով հնարավոր չէր կանխատեսել, և բացվելով բնական ճանապարհով՝ մի պարզ, իրական կյանքի պահը ամեն ինչ դարձրեց համատեղ ապագա՝ անկեղծ, անսպասելի և խորապես մեր։",
+      lead: [
+        "Մի պատմություն, որը սկսվեց դպրոցական տարիքից։",
+        "«Երբ առաջին անգամ մտա դպրոց, իմ աչքին միայն դու երեւացիր…Ա+ Ա = ❤️» Այս խոսքերն ասվել են դեռ 16 տարի առաջ՝ 15.01.2010թ …",
+        "Տրվեց Մի հարց, որի պատասխանը ուշացավ…",
+        "Անցան տարիներ, ընկերությունը դարձավ սեր, իսկ սերը՝ շուտով կդառնա ընտանիք։",
+        "16 տարի անց, Աստծո կամոք, մենք նորից գտանք իրար։ Այն, ինչ սկսվել էր դպրոցական տարիներին, այսօր դարձել է մեր ամենասիրելի պատմությունը, որը տարիների ընթացքում չավարտվեց, այլ պարզապես սպասեց իր շարունակությանը։",
+        "Եվ հիմա մենք պատրաստ ենք գրել մեր պատմության ամենագեղեցիկ էջը՝ մեր ընտանիքի սկիզբը։ 🤍",
+        "Սիրուց ծնված այս պատմության հաջորդ էջը կգրվի հենց այն օրը, երբ մենք միմյանց կասենք՝ «Այո՛»։ 26.10.26",
+      ],
       altPortrait: "Անդրանիկ և Անուշիկ",
     },
     events: {
@@ -367,16 +371,16 @@ export const figmaByLang = {
       title: "Որտեղ և Երբ",
       ceremonyTitle: "Պսակադրություն",
       ceremonyQuote: "Սուրբ միություն՝ քարի ու հոգու նուրբ շշնջյունների ներքո։",
-      celebrationTitle: "Խնջույք",
+      celebrationTitle: "Տոնական Խնջույք",
       celebrationQuote:
-        "Ընթրիք բաց երկնքի և այգիների միջև՝ Art Village Armenia-ում։",
-      openMaps: "Բացել Google Maps-ում",
-      ceremonyVenue: "Սուրբ Աննա եկեղեցի",
-      ceremonyAddress: "Աբովյան փողոց, Երևան, Հայաստան",
-      receptionVenue: "Art Village Armenia",
-      receptionAddress: "Արագածոտնի մարզ, Աշտարակ համայնք, հողամաս 25",
-      mapAltCeremony: "Սուրբ Աննա եկեղեցի (Կաթողիկե), Աբովյան փողոց, Երևան",
-      mapAltReception: "Art Village Armenia, միջոցառման վայր և այգիներ",
+        "Էլեգանտ երեկո՝ երդումներով, կենացներով և պարով՝ Վիվալդի Հոլլում։",
+      getDirections: "Ցույց տալ երթուղին",
+      ceremonyVenue: "Մարիամ Աստվածածին եկեղեցի",
+      ceremonyAddress: "Նորք Մարաշ, Երևան, Հայաստան",
+      receptionVenue: "Վիվալդի Հոլլ",
+      receptionAddress: "Երևան, Հայաստան",
+      mapAltCeremony: "Մարիամ Աստվածածին եկեղեցի, Նորք Մարաշ, Երևան",
+      mapAltReception: "Վիվալդի Հոլլ, Երևան",
     },
     attire: {
       eyebrow: "Դրես-կոդ",
@@ -425,6 +429,28 @@ export const figmaByLang = {
       li1: "Շնորհակալ ենք մեր ծնողներին ու մեծերին, որ մեզ սովորեցրին ճշմարիտ սիրել։",
       li2: "Տոնում ենք մեր քույրերի, եղբայրների, զարմիկների և ընկերների հետ, որոնք արդեն հարազատ են դարձել։",
       li3: "Անհամբեր սպասում ենք այն հուշերին, տարեդարձերին, տոներին ու հասարակ երեքշաբթիներին, որոնք դեռ պիտի ստեղծենք։",
+      altPortrait: "Անդրանիկ և Անուշիկ, ձեռք ձեռքի ջրի եզերքին",
+    },
+    rsvp: {
+      eyebrow: "Հաստատում",
+      heading: "Խնդրում ենք հաստատել Ձեր ներկայությունը",
+      intro: "Լրացնել հարցաթերթիկը մինչև 20.10.2026թ.։",
+      nameLabel: "Անուն",
+      surnameLabel: "Ազգանուն",
+      guestOfLabel: "Ում հյուրն եք",
+      guestOfGroom: "Փեսայի",
+      guestOfBride: "Հարսի",
+      guestOfBoth: "Երկուսի",
+      guestCountLabel: "Հյուրերի քանակը",
+      songLabel: "Գրեք Ձեր նախընտրելի երգը",
+      attendingYes: "Կարող եմ մասնակցել միջոցառմանը",
+      attendingNo: "Կներեք, չեմ կարողանա գալ",
+      submit: "Հաստատել",
+      submitting: "Ուղարկվում է…",
+      successTitle: "Շնորհակալություն",
+      successMessage: "Ձեր պատասխանն ընդունված է։ Անհամբեր սպասում ենք հանդիպելուն։",
+      errorMessage: "Ձեր պատասխանն ուղարկելիս սխալ առաջացավ։ Խնդրում ենք փորձել կրկին։",
+      requiredError: "Խնդրում ենք լրացնել Ձեր անունը, ազգանունը և հաստատել՝ կմասնակցե՞ք։",
     },
     footer: {
       names: "Անդրանիկ և Անուշիկ",
@@ -441,13 +467,15 @@ export const figmaByLang = {
       attire: "Дресс-код",
       schedule: "Программа",
       roots: "Корни",
+      rsvp: "Подтверждение",
     },
     logo: { first: "Андраник", second: "Анушик" },
     hero: {
       ariaSection: "Добро пожаловать",
       kicker: "С любовью приглашаем на нашу свадьбу",
       title: "Андраник и Анушик",
-      dateLine: "24 июня 2026",
+      dateLine: "26 октября 2026",
+      countdownIntro: "Теперь нас разделяет лишь время, которого осталось",
       thankYouPassed:
         "С любовью благодарим за то, что разделили с нами нашу радость.",
       days: "Дней",
@@ -460,8 +488,9 @@ export const figmaByLang = {
     story: {
       eyebrow: "Наш путь",
       heading: "Как мы нашли и выбрали друг друга.",
-      lead:
+      lead: [
         "Всё началось самым обыкновенным образом — на рабочей встрече в офисе, когда разговор затянулся чуть дольше обычного и профессиональная граница незаметно смягчилась в интерес, затем в дружбу и наконец в нечто такое, чего мы сами не ожидали. То, что казалось рутиной, переросло в связь, которую не предугадал бы ни план, ни календарь, и всё развивалось естественно, пока простой, настоящий жизненный миг не превратил всё в общее будущее — честное, неожиданное и по-настоящему наше.",
+      ],
       altPortrait: "Андраник и Анушик",
     },
     events: {
@@ -471,14 +500,14 @@ export const figmaByLang = {
       ceremonyQuote: "Священный союз под тихий шепот камня и духа.",
       celebrationTitle: "Банкет",
       celebrationQuote:
-        "Ужин под открытым небом и среди садов в Art Village Armenia.",
-      openMaps: "Открыть в Google Maps",
-      ceremonyVenue: "Церковь Святой Анны",
-      ceremonyAddress: "ул. Абовяна, Ереван, Армения",
-      receptionVenue: "Art Village Armenia",
-      receptionAddress: "Арагацотнская область, Аштарак, участок 25",
-      mapAltCeremony: "Церковь Святой Анны (Катогике), ул. Абовяна, Ереван",
-      mapAltReception: "Art Village Armenia, место проведения и сады",
+        "Изысканный вечер клятв, тостов и танцев в Vivaldi Hall.",
+      getDirections: "Проложить маршрут",
+      ceremonyVenue: "Церковь Сурб Мариам Аствацацин",
+      ceremonyAddress: "Норк Мараш, Ереван, Армения",
+      receptionVenue: "Vivaldi Hall",
+      receptionAddress: "Ереван, Армения",
+      mapAltCeremony: "Церковь Сурб Мариам Аствацацин, Норк Мараш, Ереван",
+      mapAltReception: "Vivaldi Hall, Ереван",
     },
     attire: {
       eyebrow: "Дресс-код",
@@ -527,6 +556,29 @@ export const figmaByLang = {
       li1: "Благодарим наших родителей и старших, которые научили нас любить по-настоящему.",
       li2: "Празднуем с нашими братьями, сестрами, кузенами и друзьями, которые уже стали родными.",
       li3: "С нетерпением ждем воспоминаний, годовщин, праздников и простых вторников, которые нам еще предстоит создать.",
+      altPortrait: "Андраник и Анушик, держась за руки у воды",
+    },
+    rsvp: {
+      eyebrow: "Подтверждение",
+      heading: "Просим подтвердить ваше присутствие",
+      intro:
+        "Пожалуйста, подтвердите свое присутствие и заполните форму ниже до 5 сентября 2026 г.",
+      nameLabel: "Имя",
+      surnameLabel: "Фамилия",
+      guestOfLabel: "Вы гость со стороны",
+      guestOfGroom: "Жениха",
+      guestOfBride: "Невесты",
+      guestOfBoth: "Обоих",
+      guestCountLabel: "Количество гостей",
+      songLabel: "Ваша любимая песня для танцпола",
+      attendingYes: "Обязательно буду",
+      attendingNo: "К сожалению, не смогу",
+      submit: "Подтвердить",
+      submitting: "Отправка…",
+      successTitle: "Спасибо!",
+      successMessage: "Ваш ответ получен. Мы очень ждём встречи с вами.",
+      errorMessage: "Не удалось отправить ответ. Пожалуйста, попробуйте ещё раз.",
+      requiredError: "Пожалуйста, укажите имя, фамилию и подтвердите своё участие.",
     },
     footer: {
       names: "Андраник и Анушик",

@@ -8,7 +8,7 @@ const LanguageContext = createContext(null);
 
 export function LanguageProvider({ children }) {
   const [lang, setLangState] = useState(() => {
-    if (typeof window === "undefined") return "en";
+    if (typeof window === "undefined") return "hy";
 
     // 1. Check URL parameters (standard way: ?lang=en)
     const params = new URLSearchParams(window.location.search);
@@ -27,7 +27,7 @@ export function LanguageProvider({ children }) {
     if (saved === "en" || saved === "hy" || saved === "ru") return saved;
 
     // 3. Fallback to default
-    return "en";
+    return "hy";
   });
 
   const setLang = (next) => {

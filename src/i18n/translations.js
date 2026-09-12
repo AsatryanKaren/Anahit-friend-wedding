@@ -8,6 +8,10 @@ export const translations = {
       en: "English",
       ru: "Русский",
     },
+    music: {
+      mute: "Անջատել երաժշտությունը",
+      unmute: "Միացնել երաժշտությունը",
+    },
     meta: {
       couple: "Անդրանիկ Ասատրյան և Անուշիկ Համբարձումյան",
     },
@@ -21,7 +25,7 @@ export const translations = {
       dateLabel: "Օր",
       timeLabel: "Ժամ",
       placeLabel: "Վայր",
-      date: "Հունիսի 24, 2026",
+      date: "Հոկտեմբերի 26, 2026",
       time: "14:00",
       place: "Սուրբ Աննա եկեղեցի, Երևան",
       scrollHint: "Սահեցրեք ներքև",
@@ -41,7 +45,7 @@ export const translations = {
       eyebrow: "Պսակադրություն",
       title: "Արարողության մանրամասները",
       items: {
-        date: { label: "Օր", value: "24 հունիսի, 2026" },
+        date: { label: "Օր", value: "26 հոկտեմբերի, 2026" },
         time: { label: "Ժամ", value: "14:00" },
         church: {
           label: "Եկեղեցի",
@@ -100,6 +104,10 @@ export const translations = {
       en: "English",
       ru: "Русский",
     },
+    music: {
+      mute: "Mute music",
+      unmute: "Unmute music",
+    },
     meta: {
       couple: "Andranik Asatryan & Anushik Hambardzumyan",
     },
@@ -113,7 +121,7 @@ export const translations = {
       dateLabel: "Date",
       timeLabel: "Time",
       placeLabel: "Place",
-      date: "June 24, 2026",
+      date: "October 26, 2026",
       time: "14:00",
       place: "Saint Anna Church, Abovyan St, Yerevan",
       scrollHint: "Scroll down",
@@ -133,7 +141,7 @@ export const translations = {
       eyebrow: "Ceremony",
       title: "Ceremony details",
       items: {
-        date: { label: "Date", value: "June 24, 2026" },
+        date: { label: "Date", value: "October 26, 2026" },
         time: { label: "Time", value: "14:00" },
         church: {
           label: "Church",
@@ -192,6 +200,10 @@ export const translations = {
       en: "English",
       ru: "Русский",
     },
+    music: {
+      mute: "Выключить музыку",
+      unmute: "Включить музыку",
+    },
     meta: {
       couple: "Андраник Асатрян и Анушик Амбарцумян",
     },
@@ -205,7 +217,7 @@ export const translations = {
       dateLabel: "Дата",
       timeLabel: "Время",
       placeLabel: "Место",
-      date: "24 июня 2026",
+      date: "26 октября 2026",
       time: "14:00",
       place: "Церковь Святой Анны, Ереван",
       scrollHint: "Прокрутите вниз",
@@ -225,7 +237,7 @@ export const translations = {
       eyebrow: "Венчание",
       title: "Детали церемонии",
       items: {
-        date: { label: "Дата", value: "24 июня 2026" },
+        date: { label: "Дата", value: "26 октября 2026" },
         time: { label: "Время", value: "14:00" },
         church: {
           label: "Церковь",

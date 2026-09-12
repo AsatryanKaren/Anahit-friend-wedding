@@ -37,9 +37,14 @@ export function LanguageSwitcher({
   );
 
   const rootClass =
-    variant === "inline"
-      ? `${styles.root} ${styles.rootInline}`
-      : `${styles.root} ${styles.rootBar}`;
+    variant === "corner"
+      ? `${styles.root} ${styles.rootCorner}`
+      : variant === "inline"
+        ? `${styles.root} ${styles.rootInline}`
+        : `${styles.root} ${styles.rootBar}`;
+
+  const menuClass =
+    variant === "corner" ? `${styles.menu} ${styles.menuLeft}` : styles.menu;
 
   return (
     <div ref={wrapRef} className={rootClass}>
@@ -55,7 +60,7 @@ export function LanguageSwitcher({
         <GlobalOutlined className={styles.icon} aria-hidden />
       </button>
       {open ? (
-        <ul className={styles.menu} role="menu" aria-label={labels.ariaLabel}>
+        <ul className={menuClass} role="menu" aria-label={labels.ariaLabel}>
           <li role="presentation">
             <button
               type="button"

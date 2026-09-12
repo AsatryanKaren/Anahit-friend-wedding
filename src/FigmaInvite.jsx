@@ -1,32 +1,21 @@
-import { figmaAssets, venueLinks } from "./constants/figmaAssets.js";
+import { figmaAssets, heroCouplePhoto, venueLinks } from "./constants/figmaAssets.js";
 import { useInViewOnce } from "./hooks/useInViewOnce.js";
 import { useReducedMotion } from "./hooks/useReducedMotion.js";
-import { useActiveNavSection } from "./hooks/useActiveNavSection.js";
-import { useScrollPast } from "./hooks/useScrollPast.js";
 import { useWeddingCountdown } from "./hooks/useWeddingCountdown.js";
-import { FamilyTreeVisual } from "./components/FamilyTreeVisual.jsx";
-import {
-  IconCelebration,
-  IconChevronDown,
-  IconChurch,
-  IconPin,
-} from "./components/Icons/Icons.jsx";
+import { IconPin } from "./components/Icons/Icons.jsx";
 import { ScheduleVine } from "./components/ScheduleVine.jsx";
 import { LanguageSwitcher } from "./components/LanguageSwitcher/LanguageSwitcher.jsx";
+import { MusicToggle } from "./components/MusicToggle/MusicToggle.jsx";
 import { useI18n } from "./i18n/LanguageContext.jsx";
+import {
+  GOOGLE_FORM_ACTION,
+  RSVP_FIELDS,
+  isRsvpFormConfigured,
+} from "./constants/rsvpForm.js";
 import styles from "./FigmaInvite.module.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const WEDDING_AT = new Date("2026-06-24T14:00:00");
-
-const NAV_IDS = [
-  { id: "home", key: "home" },
-  { id: "story", key: "story" },
-  { id: "events", key: "details" },
-  { id: "attire", key: "attire" },
-  { id: "schedule", key: "schedule" },
-  { id: "roots", key: "roots" },
-];
+const WEDDING_AT = new Date("2026-10-26T14:00:00");
 
 function Reveal({
   as: Tag = "div",
@@ -49,17 +38,200 @@ function Reveal({
   );
 }
 
+function RsvpForm({ f }) {
+  const [values, setValues] = useState({
+    guestOf: "",
+    guestCount: "1",
+    attending: "",
+  });
+  const [status, setStatus] = useState("idle"); // idle | required | submitting | success
+  const iframeRef = useRef(null);
+  const formRef = useRef(null);
+  const configured = isRsvpFormConfigured();
+
+  useEffect(() => {
+    if (status !== "submitting") return undefined;
+    const iframe = iframeRef.current;
+    if (!iframe) return undefined;
+    const onLoad = () => setStatus("success");
+    iframe.addEventListener("load", onLoad);
+    return () => iframe.removeEventListener("load", onLoad);
+  }, [status]);
+
+  function update(field, value) {
+    setValues((prev) => ({ ...prev, [field]: value }));
+  }
+
+  function handleSubmit(event) {
+    const form = event.currentTarget;
+    const name = form.elements.namedItem(RSVP_FIELDS.name)?.value.trim();
+    const surname = form.elements.namedItem(RSVP_FIELDS.surname)?.value.trim();
+
+    if (!name || !surname || !values.attending) {
+      event.preventDefault();
+      setStatus("required");
+      return;
+    }
+
+    if (!configured) {
+      event.preventDefault();
+      setStatus("success");
+      return;
+    }
+
+    setStatus("submitting");
+  }
+
+  if (status === "success") {
+    return (
+      <div className={styles.rsvpSuccess} role="status">
+        <span className={styles.rsvpSuccessIcon}>✓</span>
+        <h3 className={styles.rsvpSuccessTitle}>{f.rsvp.successTitle}</h3>
+        <p className={styles.rsvpSuccessMessage}>{f.rsvp.successMessage}</p>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <form
+        ref={formRef}
+        className={styles.rsvpForm}
+        action={GOOGLE_FORM_ACTION}
+        method="POST"
+        target="rsvp-hidden-iframe"
+        onSubmit={handleSubmit}
+      >
+        <div className={styles.rsvpField}>
+          <label className={styles.rsvpLabel} htmlFor="rsvp-name">
+            {f.rsvp.nameLabel}
+          </label>
+          <input
+            id="rsvp-name"
+            className={styles.rsvpInput}
+            type="text"
+            name={RSVP_FIELDS.name}
+            autoComplete="given-name"
+            required
+          />
+        </div>
+
+        <div className={styles.rsvpField}>
+          <label className={styles.rsvpLabel} htmlFor="rsvp-surname">
+            {f.rsvp.surnameLabel}
+          </label>
+          <input
+            id="rsvp-surname"
+            className={styles.rsvpInput}
+            type="text"
+            name={RSVP_FIELDS.surname}
+            autoComplete="family-name"
+            required
+          />
+        </div>
+
+        <fieldset className={styles.rsvpField}>
+          <legend className={styles.rsvpLabel}>{f.rsvp.guestOfLabel}</legend>
+          <div className={styles.rsvpRadioRow}>
+            {[
+              ["groom", f.rsvp.guestOfGroom],
+              ["bride", f.rsvp.guestOfBride],
+              ["both", f.rsvp.guestOfBoth],
+            ].map(([key, label]) => (
+              <label key={key} className={styles.rsvpRadioOption}>
+                <input
+                  type="radio"
+                  name={RSVP_FIELDS.guestOf}
+                  value={label}
+                  checked={values.guestOf === key}
+                  onChange={() => update("guestOf", key)}
+                />
+                <span className={styles.rsvpRadioDot} aria-hidden="true" />
+                {label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <div className={styles.rsvpField}>
+          <label className={styles.rsvpLabel} htmlFor="rsvp-guest-count">
+            {f.rsvp.guestCountLabel}
+          </label>
+          <input
+            id="rsvp-guest-count"
+            className={styles.rsvpInput}
+            type="number"
+            min="1"
+            max="10"
+            name={RSVP_FIELDS.guestCount}
+            value={values.guestCount}
+            onChange={(e) => update("guestCount", e.target.value)}
+          />
+        </div>
+
+        <div className={styles.rsvpField}>
+          <label className={styles.rsvpLabel} htmlFor="rsvp-song">
+            {f.rsvp.songLabel}
+          </label>
+          <input
+            id="rsvp-song"
+            className={styles.rsvpInput}
+            type="text"
+            name={RSVP_FIELDS.song}
+          />
+        </div>
+
+        <div className={styles.rsvpRadioGroup}>
+          {[
+            ["yes", f.rsvp.attendingYes],
+            ["no", f.rsvp.attendingNo],
+          ].map(([key, label]) => (
+            <label key={key} className={styles.rsvpRadioOption}>
+              <input
+                type="radio"
+                name={RSVP_FIELDS.attending}
+                value={label}
+                checked={values.attending === key}
+                onChange={() => update("attending", key)}
+              />
+              <span className={styles.rsvpRadioDot} aria-hidden="true" />
+              {label}
+            </label>
+          ))}
+        </div>
+
+        {status === "required" && (
+          <p className={styles.rsvpError} role="alert">
+            {f.rsvp.requiredError}
+          </p>
+        )}
+
+        <button
+          className={styles.rsvpSubmit}
+          type="submit"
+          disabled={status === "submitting"}
+        >
+          {status === "submitting" ? f.rsvp.submitting : f.rsvp.submit}
+        </button>
+      </form>
+      <iframe
+        ref={iframeRef}
+        name="rsvp-hidden-iframe"
+        title="rsvp"
+        className={styles.rsvpHiddenFrame}
+      />
+    </>
+  );
+}
+
 export default function FigmaInvite() {
   const { lang, setLang, t } = useI18n();
   const f = t.figma;
   const countdown = useWeddingCountdown(WEDDING_AT);
   const reducedMotion = useReducedMotion();
-  const navScrolled = useScrollPast(40);
-  const activeNavId = useActiveNavSection(88);
 
   const motion = reducedMotion ? "reduce" : "full";
-  const navIds = NAV_IDS;
-  
+
   const scheduleHeartRef = useRef(null);
   const scheduleTrackRef = useRef(null);
 
@@ -107,40 +279,13 @@ export default function FigmaInvite() {
 
   return (
     <div className={styles.page} data-motion={motion}>
-      <header
-        className={`${styles.topNav} ${navScrolled ? styles.topNavScrolled : ""}`.trim()}
-      >
-        <div className={styles.topNavBrand}>
-          <p className={styles.logo}>
-            <span className={styles.logoName}>{f.logo.first}</span>
-            <span className={styles.logoAmp}>&amp;</span>
-            <span className={styles.logoName}>{f.logo.second}</span>
-          </p>
-          <LanguageSwitcher
-            lang={lang}
-            onChange={setLang}
-            labels={t.language}
-            variant="inline"
-          />
-        </div>
-        <div className={styles.topNavRight}>
-          <nav aria-label={f.nav.ariaLabel}>
-            <ul className={styles.navLinks}>
-              {navIds.map(({ id, key }) => (
-                <li key={id}>
-                  <a
-                    className={activeNavId === id ? styles.active : undefined}
-                    href={`#${id}`}
-                    aria-current={activeNavId === id ? "true" : undefined}
-                  >
-                    {f.nav[key]}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <LanguageSwitcher
+        lang={lang}
+        onChange={setLang}
+        labels={t.language}
+        variant="corner"
+      />
+      <MusicToggle labels={t.music} />
 
       <section
         id="home"
@@ -148,69 +293,85 @@ export default function FigmaInvite() {
         aria-label={f.hero.ariaSection}
       >
         <div className={styles.heroElegantBg}>
+          <picture>
+            <source
+              type="image/webp"
+              sizes="100vw"
+              srcSet={`${heroCouplePhoto.webp800} 800w, ${heroCouplePhoto.webp1400} 1400w`}
+            />
+            <img
+              className={styles.heroElegantPhoto}
+              src={heroCouplePhoto.fallbackJpg}
+              alt=""
+              aria-hidden="true"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
+          <div className={styles.heroElegantPhotoVeil} />
           <div className={styles.heroElegantOrb1} />
           <div className={styles.heroElegantOrb2} />
           <div className={styles.heroElegantOrb3} />
         </div>
         
         <div className={styles.heroElegantContent}>
-          <div className={styles.heroElegantOrnament}>✦</div>
-          
-          <div className={styles.heroElegantKicker}>
-            {f.hero.kicker}
-          </div>
-          
-          <div className={styles.heroElegantNames}>
-            <h1 className={styles.heroElegantName}>Andranik</h1>
-            <div className={styles.heroElegantAmpersand}>
-              <span className={styles.heroElegantAmpLine} />
-              <span className={styles.heroElegantAmpSymbol}>&</span>
-              <span className={styles.heroElegantAmpLine} />
+          <div className={styles.heroElegantTop}>
+            <div className={styles.heroElegantOrnament}>✦</div>
+
+            <div className={styles.heroElegantKicker}>
+              {f.hero.kicker}
             </div>
-            <h2 className={styles.heroElegantName}>Anushik</h2>
+
+            <div className={styles.heroElegantNames}>
+              <h1 className={styles.heroElegantName}>{f.logo.first}</h1>
+              <div className={styles.heroElegantAmpersand}>
+                <span className={styles.heroElegantAmpLine} />
+                <span className={styles.heroElegantAmpSymbol} aria-label="&">
+                  <svg viewBox="0 0 32 29">
+                    <path
+                      d="M16 28.5c-.3 0-.6-.1-.8-.3C9.4 23.4 0 15.6 0 8.8 0 3.9 3.9 0 8.8 0c2.6 0 5 .9 6.8 2.6.1.1.3.1.4 0C17.8.9 20.2 0 22.8 0 27.7 0 31.6 3.9 31.6 8.8c0 6.8-9.4 14.6-15.2 19.4-.2.2-.5.3-.8.3z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                <span className={styles.heroElegantAmpLine} />
+              </div>
+              <h2 className={styles.heroElegantName}>{f.logo.second}</h2>
+            </div>
           </div>
 
-          <div className={styles.heroElegantDate}>
-            {f.hero.dateLine}
-          </div>
+          <div className={styles.heroElegantBottom}>
+            <div className={styles.heroElegantDate}>
+              <span className={styles.heroElegantDateLine} />
+              <span className={styles.heroElegantDateText}>{f.hero.dateLine}</span>
+              <span className={styles.heroElegantDateLine} />
+            </div>
 
-          <div className={styles.heroElegantDivider}>
-            <span className={styles.heroElegantDividerLine} />
-            <span className={styles.heroElegantDividerDot}>◆</span>
-            <span className={styles.heroElegantDividerLine} />
-          </div>
-
-          {!countdown.passed && (
-            <div className={styles.heroElegantCountdown} aria-live="polite">
-              <div className={styles.heroElegantCountdownItems}>
-                <div className={styles.heroElegantCountdownItem}>
-                  <span className={styles.heroElegantCountdownNum}>{countdown.days}</span>
-                  <span className={styles.heroElegantCountdownLabel}>{f.hero.days}</span>
-                </div>
-                <span className={styles.heroElegantCountdownSep}>·</span>
-                <div className={styles.heroElegantCountdownItem}>
-                  <span className={styles.heroElegantCountdownNum}>{countdown.hours}</span>
-                  <span className={styles.heroElegantCountdownLabel}>{f.hero.hours}</span>
-                </div>
-                <span className={styles.heroElegantCountdownSep}>·</span>
-                <div className={styles.heroElegantCountdownItem}>
-                  <span className={styles.heroElegantCountdownNum}>{countdown.mins}</span>
-                  <span className={styles.heroElegantCountdownLabel}>{f.hero.mins}</span>
+            {!countdown.passed && (
+              <div className={styles.heroElegantCountdown}>
+                <p className={styles.heroElegantCountdownIntro}>
+                  {f.hero.countdownIntro}
+                </p>
+                <div className={styles.heroElegantCountdownItems} aria-live="polite">
+                  <div className={styles.heroElegantCountdownItem}>
+                    <span className={styles.heroElegantCountdownNum}>{countdown.days}</span>
+                    <span className={styles.heroElegantCountdownLabel}>{f.hero.days}</span>
+                  </div>
+                  <span className={styles.heroElegantCountdownSep}>·</span>
+                  <div className={styles.heroElegantCountdownItem}>
+                    <span className={styles.heroElegantCountdownNum}>{countdown.hours}</span>
+                    <span className={styles.heroElegantCountdownLabel}>{f.hero.hours}</span>
+                  </div>
+                  <span className={styles.heroElegantCountdownSep}>·</span>
+                  <div className={styles.heroElegantCountdownItem}>
+                    <span className={styles.heroElegantCountdownNum}>{countdown.mins}</span>
+                    <span className={styles.heroElegantCountdownLabel}>{f.hero.mins}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-
-          <div className={styles.heroElegantOrnament}>✦</div>
+            )}
+          </div>
         </div>
-
-        <a
-          href="#story"
-          className={styles.heroElegantScroll}
-          aria-label={f.hero.chevronAria}
-        >
-          <IconChevronDown />
-        </a>
       </section>
 
       <section id="story" className={styles.storyNew}>
@@ -234,8 +395,8 @@ export default function FigmaInvite() {
                     src={figmaAssets.storyPhotoPortrait}
                     alt={f.story.altPortrait}
                     decoding="async"
-                    width={4032}
-                    height={3024}
+                    width={1333}
+                    height={2000}
                   />
                   <div className={styles.storyNewImageOverlay}></div>
                 </div>
@@ -244,7 +405,11 @@ export default function FigmaInvite() {
             
             <Reveal reducedMotion={reducedMotion} delayMs={200}>
               <div className={styles.storyNewText}>
-                <p className={styles.storyNewLead}>{f.story.lead}</p>
+                {f.story.lead.map((paragraph, i) => (
+                  <p key={i} className={styles.storyNewLead}>
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </Reveal>
           </div>
@@ -267,12 +432,11 @@ export default function FigmaInvite() {
             <Reveal reducedMotion={reducedMotion}>
               <article className={styles.eventsNewCard}>
                 <div className={styles.eventsNewCardHeader}>
-                  <IconChurch className={styles.eventsNewCardIcon} />
                   <h3 className={styles.eventsNewCardTitle}>{f.events.ceremonyTitle}</h3>
                   <span className={styles.eventsNewCardTime}>14:00</span>
                 </div>
                 <p className={styles.eventsNewCardQuote}>
-                  &ldquo;{f.events.ceremonyQuote}&rdquo;
+                  «{f.events.ceremonyQuote}»
                 </p>
                 <div className={styles.eventsNewCardDetails}>
                   <div className={styles.eventsNewCardLocation}>
@@ -288,11 +452,11 @@ export default function FigmaInvite() {
                   </div>
                   <a
                     className={styles.eventsNewCardLink}
-                    href={venueLinks.saintAnnaGoogleMaps}
+                    href={venueLinks.ceremonyDirections}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {f.events.openMaps} →
+                    {f.events.getDirections} →
                   </a>
                 </div>
                 <div className={styles.eventsNewCardMap}>
@@ -308,12 +472,11 @@ export default function FigmaInvite() {
               <Reveal reducedMotion={reducedMotion} delayMs={120}>
                 <article className={styles.eventsNewCard}>
                   <div className={styles.eventsNewCardHeader}>
-                    <IconCelebration className={styles.eventsNewCardIcon} />
                     <h3 className={styles.eventsNewCardTitle}>{f.events.celebrationTitle}</h3>
-                    <span className={styles.eventsNewCardTime}>18:00</span>
+                    <span className={styles.eventsNewCardTime}>17:00</span>
                   </div>
                   <p className={styles.eventsNewCardQuote}>
-                    &ldquo;{f.events.celebrationQuote}&rdquo;
+                    «{f.events.celebrationQuote}»
                   </p>
                   <div className={styles.eventsNewCardDetails}>
                     <div className={styles.eventsNewCardLocation}>
@@ -327,24 +490,14 @@ export default function FigmaInvite() {
                         </p>
                       </div>
                     </div>
-                    <div className={styles.eventsNewCardLinks}>
-                      <a
-                        className={styles.eventsNewCardLink}
-                        href={venueLinks.artVillageSite}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        artvillage.am →
-                      </a>
-                      <a
-                        className={styles.eventsNewCardLink}
-                        href={venueLinks.artVillageGoogleMaps}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {f.events.openMaps} →
-                      </a>
-                    </div>
+                    <a
+                      className={styles.eventsNewCardLink}
+                      href={venueLinks.celebrationDirections}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {f.events.getDirections} →
+                    </a>
                   </div>
                   <div className={styles.eventsNewCardMap}>
                     <img
@@ -484,7 +637,32 @@ export default function FigmaInvite() {
             <div className={styles.scheduleFlow}>
               <div className={styles.scheduleTrack} ref={scheduleTrackRef}>
                 <ScheduleVine className={styles.scheduleVine} />
-                <div className={styles.scheduleScrollHeart} ref={scheduleHeartRef}>❤️</div>
+                <div className={styles.scheduleScrollHeart} ref={scheduleHeartRef}>
+                  <svg
+                    className={styles.scheduleScrollHeartIcon}
+                    viewBox="0 0 32 29"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <linearGradient
+                        id="scheduleHeartFill"
+                        x1="0"
+                        y1="0"
+                        x2="32"
+                        y2="29"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop offset="0" stopColor="#93b380" />
+                        <stop offset="1" stopColor="#5f7d52" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M16 28.5c-.3 0-.6-.1-.8-.3C9.4 23.4 0 15.6 0 8.8 0 3.9 3.9 0 8.8 0c2.6 0 5 .9 6.8 2.6.1.1.3.1.4 0C17.8.9 20.2 0 22.8 0 27.7 0 31.6 3.9 31.6 8.8c0 6.8-9.4 14.6-15.2 19.4-.2.2-.5.3-.8.3z"
+                      fill="url(#scheduleHeartFill)"
+                    />
+                  </svg>
+                  <span className={styles.scheduleScrollHeartNum}>26</span>
+                </div>
                 <ol className={styles.scheduleList}>
                   {f.schedule.rows.map((row, i) => {
                     const side =
@@ -550,7 +728,13 @@ export default function FigmaInvite() {
             <Reveal reducedMotion={reducedMotion} delayMs={100}>
               <div className={styles.rootsNewVisual}>
                 <div className={styles.rootsNewVisualFrame}>
-                  <FamilyTreeVisual />
+                  <img
+                    src={figmaAssets.rootsPhotoPortrait}
+                    alt={f.roots.altPortrait}
+                    decoding="async"
+                    width={1333}
+                    height={2000}
+                  />
                 </div>
               </div>
             </Reveal>
@@ -572,20 +756,30 @@ export default function FigmaInvite() {
         </div>
       </section>
 
+      <section id="rsvp" className={styles.rsvpNew} aria-labelledby="rsvp-heading">
+        <div className={styles.rsvpNewInner}>
+          <Reveal reducedMotion={reducedMotion}>
+            <div className={styles.rsvpNewHeader}>
+              <span className={styles.rsvpNewOrnament}>✦</span>
+              <p className={styles.rsvpNewEyebrow}>{f.rsvp.eyebrow}</p>
+              <h2 id="rsvp-heading" className={styles.rsvpNewHeading}>
+                {f.rsvp.heading}
+              </h2>
+              <p className={styles.rsvpNewIntro}>{f.rsvp.intro}</p>
+            </div>
+          </Reveal>
+
+          <Reveal reducedMotion={reducedMotion} delayMs={120}>
+            <div className={styles.rsvpNewCard}>
+              <RsvpForm f={f} />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <Reveal reducedMotion={reducedMotion}>
         <footer className={styles.footerNew}>
           <div className={styles.footerNewContent}>
-            <div className={styles.footerNewOrnament}>✦</div>
-            <p className={styles.footerNewNames}>{f.footer.names}</p>
-            <nav className={styles.footerNewNav}>
-              <ul className={styles.footerNewLinks}>
-                {navIds.map(({ id, key }) => (
-                  <li key={id}>
-                    <a href={`#${id}`}>{f.nav[key]}</a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
             <p className={styles.footerNewLegal}>{f.footer.legal}</p>
           </div>
         </footer>
