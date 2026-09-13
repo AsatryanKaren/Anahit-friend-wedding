@@ -3550,11 +3550,6 @@
   .rsvpNewCard {
     padding: 24px;
   }
-
-  .rsvpRadioRow {
-    flex-direction: column;
-    gap: 12px;
-  }
 }
 
 /* RSVP Section */
@@ -3659,13 +3654,6 @@
   outline: none;
   border-color: rgba(203, 108, 117, 0.7);
   box-shadow: 0 0 0 3px rgba(203, 108, 117, 0.12);
-}
-
-.rsvpRadioRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 8px;
 }
 
 .rsvpRadioGroup {

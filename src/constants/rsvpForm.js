@@ -7,7 +7,6 @@ export const GOOGLE_FORM_ACTION =
 export const RSVP_FIELDS = {
   name: "entry.598881145",
   surname: "entry.931324665",
-  guestOf: "entry.794447136",
   guestCount: "entry.241045873",
   song: "entry.557085722",
   attending: "entry.1636053782",

@@ -40,7 +40,6 @@ function Reveal({
 
 function RsvpForm({ f }) {
   const [values, setValues] = useState({
-    guestOf: "",
     guestCount: "1",
     attending: "",
   });
@@ -129,29 +128,6 @@ function RsvpForm({ f }) {
             required
           />
         </div>
-
-        <fieldset className={styles.rsvpField}>
-          <legend className={styles.rsvpLabel}>{f.rsvp.guestOfLabel}</legend>
-          <div className={styles.rsvpRadioRow}>
-            {[
-              ["groom", f.rsvp.guestOfGroom],
-              ["bride", f.rsvp.guestOfBride],
-              ["both", f.rsvp.guestOfBoth],
-            ].map(([key, label]) => (
-              <label key={key} className={styles.rsvpRadioOption}>
-                <input
-                  type="radio"
-                  name={RSVP_FIELDS.guestOf}
-                  value={label}
-                  checked={values.guestOf === key}
-                  onChange={() => update("guestOf", key)}
-                />
-                <span className={styles.rsvpRadioDot} aria-hidden="true" />
-                {label}
-              </label>
-            ))}
-          </div>
-        </fieldset>
 
         <div className={styles.rsvpField}>
           <label className={styles.rsvpLabel} htmlFor="rsvp-guest-count">
