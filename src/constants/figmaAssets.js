@@ -3,7 +3,7 @@ import heroCoupleWebp800 from "../assets/hero-couple-800.webp";
 import heroCoupleJpg1400 from "../assets/hero-couple-1400.jpg";
 import storyCouplePhoto from "../assets/story-couple.jpg";
 import churchIllustration from "../assets/church-illustration.jpg";
-import vivaldiHallIllustration from "../assets/vivaldi-hall-illustration.webp";
+import receptionDanceIllustration from "../assets/reception-dance-illustration.png";
 import brideHairIllustration from "../assets/bride-hair-illustration.png";
 import groomTuxedoIllustration from "../assets/groom-tuxedo-illustration.png";
 import registrationCertificateIcon from "../assets/registration-certificate-icon.png";
@@ -29,8 +29,8 @@ export const figmaAssets = {
   storyPhotoPortrait: storyCouplePhoto,
   /** Ceremony venue: church illustration */
   ceremonyMap: churchIllustration,
-  /** Reception venue: Vivaldi Hall entrance illustration */
-  receptionMap: vivaldiHallIllustration,
+  /** Reception: celebration dance illustration */
+  receptionMap: receptionDanceIllustration,
   /** Bride's house: hair and flowers illustration */
   brideDress: brideHairIllustration,
   /** Groom's house: tuxedo illustration */

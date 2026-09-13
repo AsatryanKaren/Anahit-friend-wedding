@@ -428,18 +428,23 @@ export default function FigmaInvite() {
                     {withThemedHearts(paragraph)}
                   </p>
                 ))}
-                <button
-                  type="button"
-                  className={styles.storyNoteThumb}
-                  onClick={() => setNoteOpen(true)}
-                  aria-haspopup="dialog"
-                >
-                  <img
-                    src={figmaAssets.loveLetterNote}
-                    alt={f.story.noteAlt}
-                    decoding="async"
-                  />
-                </button>
+                <div className={styles.storyNoteRow}>
+                  <button
+                    type="button"
+                    className={styles.storyNoteThumb}
+                    onClick={() => setNoteOpen(true)}
+                    aria-haspopup="dialog"
+                  >
+                    <img
+                      src={figmaAssets.loveLetterNote}
+                      alt={f.story.noteAlt}
+                      decoding="async"
+                    />
+                  </button>
+                  <p className={styles.storyNoteCaption}>
+                    {f.story.noteCaption}
+                  </p>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -557,11 +562,17 @@ export default function FigmaInvite() {
                       >
                         {SCHEDULE_IMAGES[i] && (
                           <div
-                            className={`${styles.scheduleItemImage} ${
-                              i === 0 || i === 1 || i === 3
+                            className={[
+                              styles.scheduleItemImage,
+                              [0, 1, 3, 4].includes(i)
                                 ? styles.scheduleItemImagePlain
-                                : ""
-                            }`.trim()}
+                                : "",
+                              i === 1 ? styles.scheduleItemImageBride : "",
+                              i === 3 ? styles.scheduleItemImageCert : "",
+                              i === 4 ? styles.scheduleItemImageDance : "",
+                            ]
+                              .filter(Boolean)
+                              .join(" ")}
                           >
                             <img
                               src={SCHEDULE_IMAGES[i]}

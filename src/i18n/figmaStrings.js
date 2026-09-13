@@ -179,6 +179,7 @@ export const figmaByLang = {
       ],
       altPortrait: "Andranik and Anushik, portrait",
       noteAlt: "A handwritten love note, kept since 2010",
+      noteCaption: "The original of the first page of our love, click to see it",
       noteCloseAria: "Close",
     },
     events: {
@@ -300,6 +301,7 @@ export const figmaByLang = {
       ],
       altPortrait: "Անդրանիկ և Անուշիկ",
       noteAlt: "Ձեռագիր սիրային նամակ, պահված 2010 թվականից",
+      noteCaption: "Օրիգինալը մեր սիրո առաջին էջի, սեղմիր որ տեսնես",
       noteCloseAria: "Փակել",
     },
     events: {
@@ -419,6 +421,7 @@ export const figmaByLang = {
       ],
       altPortrait: "Андраник и Анушик",
       noteAlt: "Рукописная любовная записка, хранимая с 2010 года",
+      noteCaption: "Оригинал первой страницы нашей любви, нажми, чтобы увидеть",
       noteCloseAria: "Закрыть",
     },
     events: {

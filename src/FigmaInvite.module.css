@@ -2198,6 +2198,20 @@
   object-fit: contain;
 }
 
+.scheduleItemImageBride img {
+  transform: scale(1.48);
+  transform-origin: center top;
+}
+
+.scheduleItemImageCert img {
+  transform: scale(0.75);
+}
+
+.scheduleItemImageDance img {
+  transform: scale(1.2);
+  transform-origin: center top;
+}
+
 @media (max-width: 780px) {
   .scheduleItemImage {
     right: calc(50% + clamp(16px, 5vw, 50px));
@@ -2846,10 +2860,25 @@
   text-align: justify;
 }
 
+.storyNoteRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.storyNoteCaption {
+  margin: 0;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(43, 38, 32, 0.65);
+}
+
 .storyNoteThumb {
   display: block;
   width: 96px;
-  margin: 8px 0 0;
+  margin: 0;
   padding: 0;
   border: 1px solid rgba(150, 128, 88, 0.25);
   border-radius: 6px;
