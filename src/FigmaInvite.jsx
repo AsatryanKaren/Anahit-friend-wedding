@@ -40,6 +40,7 @@ function Reveal({
 
 function RsvpForm({ f }) {
   const [values, setValues] = useState({
+    guestOf: "",
     guestCount: "1",
     attending: "",
   });
@@ -128,6 +129,28 @@ function RsvpForm({ f }) {
             required
           />
         </div>
+
+        <fieldset className={styles.rsvpField}>
+          <legend className={styles.rsvpLabel}>{f.rsvp.guestOfLabel}</legend>
+          <div className={styles.rsvpRadioRow}>
+            {[
+              ["groom", f.rsvp.guestOfGroom],
+              ["bride", f.rsvp.guestOfBride],
+            ].map(([key, label]) => (
+              <label key={key} className={styles.rsvpRadioOption}>
+                <input
+                  type="radio"
+                  name={RSVP_FIELDS.guestOf}
+                  value={label}
+                  checked={values.guestOf === key}
+                  onChange={() => update("guestOf", key)}
+                />
+                <span className={styles.rsvpRadioDot} aria-hidden="true" />
+                {label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
 
         <div className={styles.rsvpField}>
           <label className={styles.rsvpLabel} htmlFor="rsvp-guest-count">
@@ -297,6 +320,14 @@ export default function FigmaInvite() {
             <div className={styles.heroElegantKicker}>
               {f.hero.kicker}
             </div>
+          </div>
+
+          <div className={styles.heroElegantBottom}>
+            <div className={styles.heroElegantDate}>
+              <span className={styles.heroElegantDateLine} />
+              <span className={styles.heroElegantDateText}>{f.hero.dateLine}</span>
+              <span className={styles.heroElegantDateLine} />
+            </div>
 
             <div className={styles.heroElegantNames}>
               <h1 className={styles.heroElegantName}>{f.logo.first}</h1>
@@ -315,47 +346,40 @@ export default function FigmaInvite() {
               <h2 className={styles.heroElegantName}>{f.logo.second}</h2>
             </div>
           </div>
-
-          <div className={styles.heroElegantBottom}>
-            <div className={styles.heroElegantDate}>
-              <span className={styles.heroElegantDateLine} />
-              <span className={styles.heroElegantDateText}>{f.hero.dateLine}</span>
-              <span className={styles.heroElegantDateLine} />
-            </div>
-
-            {!countdown.passed && (
-              <div className={styles.heroElegantCountdown}>
-                <p className={styles.heroElegantCountdownIntro}>
-                  {f.hero.countdownIntro}
-                </p>
-                <div className={styles.heroElegantCountdownItems} aria-live="polite">
-                  <div className={styles.heroElegantCountdownItem}>
-                    <span className={styles.heroElegantCountdownNum}>{countdown.days}</span>
-                    <span className={styles.heroElegantCountdownLabel}>{f.hero.days}</span>
-                  </div>
-                  <span className={styles.heroElegantCountdownSep}>·</span>
-                  <div className={styles.heroElegantCountdownItem}>
-                    <span className={styles.heroElegantCountdownNum}>{countdown.hours}</span>
-                    <span className={styles.heroElegantCountdownLabel}>{f.hero.hours}</span>
-                  </div>
-                  <span className={styles.heroElegantCountdownSep}>·</span>
-                  <div className={styles.heroElegantCountdownItem}>
-                    <span className={styles.heroElegantCountdownNum}>{countdown.mins}</span>
-                    <span className={styles.heroElegantCountdownLabel}>{f.hero.mins}</span>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       </section>
+
+      {!countdown.passed && (
+        <section id="countdown" className={styles.countdownSection}>
+          <div className={styles.heroElegantCountdown}>
+            <p className={styles.heroElegantCountdownIntro}>
+              {f.hero.countdownIntro}
+            </p>
+            <div className={styles.heroElegantCountdownItems} aria-live="polite">
+              <div className={styles.heroElegantCountdownItem}>
+                <span className={styles.heroElegantCountdownNum}>{countdown.days}</span>
+                <span className={styles.heroElegantCountdownLabel}>{f.hero.days}</span>
+              </div>
+              <span className={styles.heroElegantCountdownSep}>·</span>
+              <div className={styles.heroElegantCountdownItem}>
+                <span className={styles.heroElegantCountdownNum}>{countdown.hours}</span>
+                <span className={styles.heroElegantCountdownLabel}>{f.hero.hours}</span>
+              </div>
+              <span className={styles.heroElegantCountdownSep}>·</span>
+              <div className={styles.heroElegantCountdownItem}>
+                <span className={styles.heroElegantCountdownNum}>{countdown.mins}</span>
+                <span className={styles.heroElegantCountdownLabel}>{f.hero.mins}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section id="story" className={styles.storyNew}>
         <div className={styles.storyNewInner}>
           <Reveal reducedMotion={reducedMotion}>
             <div className={styles.storyNewHeader}>
               <span className={styles.storyNewOrnament}>❖</span>
-              <p className={styles.storyNewEyebrow}>{f.story.eyebrow}</p>
               <h2 className={styles.storyNewHeading}>{f.story.heading}</h2>
               <div className={styles.storyNewUnderline}>
                 <span className={styles.storyNewUnderlineDot}></span>
@@ -397,7 +421,6 @@ export default function FigmaInvite() {
           <Reveal reducedMotion={reducedMotion}>
             <header className={styles.eventsNewHeader}>
               <span className={styles.eventsNewOrnament}>✧</span>
-              <p className={styles.eventsNewEyebrow}>{f.events.eyebrow}</p>
               <h2 className={styles.eventsNewTitle}>{f.events.title}</h2>
               <div className={styles.eventsNewDivider}></div>
             </header>
@@ -498,7 +521,6 @@ export default function FigmaInvite() {
           <Reveal reducedMotion={reducedMotion}>
             <div className={styles.attireNewHeader}>
               <span className={styles.attireNewOrnament}>✤</span>
-              <p className={styles.attireNewEyebrow}>{f.attire.eyebrow}</p>
               <h2 id="attire-heading" className={styles.attireNewTitle}>
                 {f.attire.title}
               </h2>
@@ -603,7 +625,6 @@ export default function FigmaInvite() {
           <div className={styles.scheduleInner}>
             <Reveal reducedMotion={reducedMotion}>
               <header className={styles.scheduleHeader}>
-                <p className={styles.scheduleEyebrow}>{f.schedule.eyebrow}</p>
                 <h2 id="schedule-heading" className={styles.scheduleTitle}>
                   {f.schedule.title}
                 </h2>
@@ -692,7 +713,6 @@ export default function FigmaInvite() {
           <Reveal reducedMotion={reducedMotion}>
             <div className={styles.rootsNewHeader}>
               <span className={styles.rootsNewOrnament}>❋</span>
-              <p className={styles.rootsNewEyebrow}>{f.roots.eyebrow}</p>
               <h2 id="roots-heading" className={styles.rootsNewHeading}>
                 {f.roots.heading}
               </h2>
@@ -737,7 +757,6 @@ export default function FigmaInvite() {
           <Reveal reducedMotion={reducedMotion}>
             <div className={styles.rsvpNewHeader}>
               <span className={styles.rsvpNewOrnament}>✦</span>
-              <p className={styles.rsvpNewEyebrow}>{f.rsvp.eyebrow}</p>
               <h2 id="rsvp-heading" className={styles.rsvpNewHeading}>
                 {f.rsvp.heading}
               </h2>
