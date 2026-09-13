@@ -776,14 +776,6 @@ export default function FigmaInvite() {
           </Reveal>
         </div>
       </section>
-
-      <Reveal reducedMotion={reducedMotion}>
-        <footer className={styles.footerNew}>
-          <div className={styles.footerNewContent}>
-            <p className={styles.footerNewLegal}>{f.footer.legal}</p>
-          </div>
-        </footer>
-      </Reveal>
     </div>
   );
 }
