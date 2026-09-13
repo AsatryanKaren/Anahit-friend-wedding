@@ -32,7 +32,7 @@ export const translations = {
       countdownLabel: "Մնացել է",
     },
     invitation: {
-      eyebrow: "Սիրով հրավիրում ենք",
+      eyebrow: "Սիրով հրավիրում ենք Ձեզ",
       title: "Մեր ամենախաղաղ ու կարևոր օրը",
       body: [
         "Սիրելի՛ հարազատներ և ընկերներ,",

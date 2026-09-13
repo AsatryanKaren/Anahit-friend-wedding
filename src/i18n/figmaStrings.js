@@ -272,7 +272,7 @@ export const figmaByLang = {
     logo: { first: "Անդրանիկ", second: "Անուշիկ" },
     hero: {
       ariaSection: "Բարի գալուստ",
-      kicker: "Սիրով հրավիրում ենք մեր հարսանիքին",
+      kicker: "Սիրով հրավիրում ենք Ձեզ մեր հարսանիքին",
       title: "Անդրանիկ և Անուշիկ",
       dateLine: "26.10.26",
       countdownVerse: "Ինչ Աստված միացրեց, մարդը թող չբաժանի",
