@@ -2210,7 +2210,8 @@
   transform-origin: center top;
 }
 
-.scheduleItemImageCert img {
+.scheduleItemImageCert img,
+.scheduleItemImageChurch img {
   transform: scale(0.85);
 }
 
