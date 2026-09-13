@@ -50,12 +50,12 @@ export const figmaAssets = {
   loveLetterNote: loveLetterNote,
 };
 
-/** Maps: driving-directions links (destination-only; Google Maps fills in the origin) */
+/** Maps: driving-directions links (destination-only; Yandex Maps fills in the origin) */
 export const venueLinks = {
   ceremonyDirections:
-    "https://www.google.com/maps/dir/?api=1&destination=Surp+Mariam+Astvatsatsin+Church+Nork+Marash+Yerevan+Armenia",
+    "https://yandex.com/maps/?rtext=~40.185387,44.510409&rtt=auto",
   celebrationDirections:
-    "https://www.google.com/maps/dir/?api=1&destination=Vivaldi+Hall+Yerevan+Armenia",
-  groomHouseDirections: "https://maps.app.goo.gl/ET23iQkxtst2SCTU7",
-  brideHouseDirections: "https://maps.app.goo.gl/NskTeCgykEG6Rygt9",
+    "https://yandex.com/maps/?rtext=~40.208450,44.529749&rtt=auto",
+  groomHouseDirections: "https://yandex.com/maps/?rtext=~40.136693,44.516975&rtt=auto",
+  brideHouseDirections: "https://yandex.com/maps/?rtext=~40.140326,44.516418&rtt=auto",
 };
