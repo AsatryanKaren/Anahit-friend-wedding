@@ -212,7 +212,9 @@ export const figmaByLang = {
       ariaSection: "Welcome",
       kicker: "You are invited to the wedding of",
       title: "Andranik & Anushik",
-      dateLine: "October 26, 2026",
+      dateLine: "26.10.26",
+      countdownVerse: "What God hath joined together, let not man put asunder.",
+      countdownVerseRef: "Mark 10:9",
       countdownIntro: "Now only time keeps us apart, and all that remains is",
       thankYouPassed: "With love, thank you for celebrating with us.",
       days: "Days",
@@ -340,8 +342,10 @@ export const figmaByLang = {
       ariaSection: "Բարի գալուստ",
       kicker: "Սիրով հրավիրում ենք մեր հարսանիքին",
       title: "Անդրանիկ և Անուշիկ",
-      dateLine: "26 հոկտեմբերի 2026",
-      countdownIntro: "Հիմա մեզ բաժանողը միայն ժամանակն է, որին մնաց՝",
+      dateLine: "26.10.26",
+      countdownVerse: "Ինչ Աստված միացրեց, մարդը թող չբաժանի",
+      countdownVerseRef: "Մարկոս 10:9",
+      countdownIntro: "Հիմա մեզ բաժանողը միայն ժամանակն է, որի ավարտին մնաց՝",
       thankYouPassed:
         "Սիրով շնորհակալ ենք, որ մեզ հետ կիսեցիք մեր ուրախությունը։",
       days: "Օր",
@@ -353,7 +357,7 @@ export const figmaByLang = {
     },
     story: {
       eyebrow: "Մեր ճանապարհը",
-      heading: "Ինչպես գտանք և ընտրեցինք միմյանց։",
+      heading: "Մեր սիրո առաջին էջը",
       lead: [
         "Մի պատմություն, որը սկսվեց դպրոցական տարիքից։",
         "«Երբ առաջին անգամ մտա դպրոց, իմ աչքին միայն դու երեւացիր…Ա+ Ա = ❤️» Այս խոսքերն ասվել են դեռ 16 տարի առաջ՝ 15.01.2010թ …",
@@ -472,7 +476,9 @@ export const figmaByLang = {
       ariaSection: "Добро пожаловать",
       kicker: "С любовью приглашаем на нашу свадьбу",
       title: "Андраник и Анушик",
-      dateLine: "26 октября 2026",
+      dateLine: "26.10.26",
+      countdownVerse: "Итак, что Бог сочетал, того человек да не разлучает.",
+      countdownVerseRef: "Марка 10:9",
       countdownIntro: "Теперь нас разделяет лишь время, которого осталось",
       thankYouPassed:
         "С любовью благодарим за то, что разделили с нами нашу радость.",

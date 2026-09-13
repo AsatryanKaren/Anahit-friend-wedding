@@ -315,8 +315,6 @@ export default function FigmaInvite() {
         
         <div className={styles.heroElegantContent}>
           <div className={styles.heroElegantTop}>
-            <div className={styles.heroElegantOrnament}>✦</div>
-
             <div className={styles.heroElegantKicker}>
               {f.hero.kicker}
             </div>
@@ -352,6 +350,8 @@ export default function FigmaInvite() {
       {!countdown.passed && (
         <section id="countdown" className={styles.countdownSection}>
           <div className={styles.heroElegantCountdown}>
+            <p className={styles.countdownVerse}>{f.hero.countdownVerse}</p>
+            <p className={styles.countdownVerseRef}>{f.hero.countdownVerseRef}</p>
             <p className={styles.heroElegantCountdownIntro}>
               {f.hero.countdownIntro}
             </p>
@@ -379,7 +379,6 @@ export default function FigmaInvite() {
         <div className={styles.storyNewInner}>
           <Reveal reducedMotion={reducedMotion}>
             <div className={styles.storyNewHeader}>
-              <span className={styles.storyNewOrnament}>❖</span>
               <h2 className={styles.storyNewHeading}>{f.story.heading}</h2>
               <div className={styles.storyNewUnderline}>
                 <span className={styles.storyNewUnderlineDot}></span>
@@ -420,7 +419,6 @@ export default function FigmaInvite() {
         <div className={styles.eventsNewInner}>
           <Reveal reducedMotion={reducedMotion}>
             <header className={styles.eventsNewHeader}>
-              <span className={styles.eventsNewOrnament}>✧</span>
               <h2 className={styles.eventsNewTitle}>{f.events.title}</h2>
               <div className={styles.eventsNewDivider}></div>
             </header>
@@ -520,7 +518,6 @@ export default function FigmaInvite() {
         <div className={styles.attireNewTop}>
           <Reveal reducedMotion={reducedMotion}>
             <div className={styles.attireNewHeader}>
-              <span className={styles.attireNewOrnament}>✤</span>
               <h2 id="attire-heading" className={styles.attireNewTitle}>
                 {f.attire.title}
               </h2>
@@ -712,7 +709,6 @@ export default function FigmaInvite() {
         <div className={styles.rootsNewInner}>
           <Reveal reducedMotion={reducedMotion}>
             <div className={styles.rootsNewHeader}>
-              <span className={styles.rootsNewOrnament}>❋</span>
               <h2 id="roots-heading" className={styles.rootsNewHeading}>
                 {f.roots.heading}
               </h2>
@@ -756,7 +752,6 @@ export default function FigmaInvite() {
         <div className={styles.rsvpNewInner}>
           <Reveal reducedMotion={reducedMotion}>
             <div className={styles.rsvpNewHeader}>
-              <span className={styles.rsvpNewOrnament}>✦</span>
               <h2 id="rsvp-heading" className={styles.rsvpNewHeading}>
                 {f.rsvp.heading}
               </h2>
