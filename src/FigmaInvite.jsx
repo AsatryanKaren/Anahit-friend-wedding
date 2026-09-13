@@ -2,8 +2,14 @@ import { figmaAssets, heroCouplePhoto, venueLinks } from "./constants/figmaAsset
 import { useInViewOnce } from "./hooks/useInViewOnce.js";
 import { useReducedMotion } from "./hooks/useReducedMotion.js";
 import { useWeddingCountdown } from "./hooks/useWeddingCountdown.js";
-import { IconPin } from "./components/Icons/Icons.jsx";
 import { ScheduleVine } from "./components/ScheduleVine.jsx";
+import {
+  GroomIcon,
+  BrideIcon,
+  RingsIcon,
+  RegistrationIcon,
+  ToastIcon,
+} from "./components/ScheduleIcons.jsx";
 import { LanguageSwitcher } from "./components/LanguageSwitcher/LanguageSwitcher.jsx";
 import { MusicToggle } from "./components/MusicToggle/MusicToggle.jsx";
 import { useI18n } from "./i18n/LanguageContext.jsx";
@@ -16,6 +22,22 @@ import styles from "./FigmaInvite.module.css";
 import { useEffect, useRef, useState } from "react";
 
 const WEDDING_AT = new Date("2026-10-26T14:00:00");
+
+const SCHEDULE_DIRECTIONS = [
+  venueLinks.ceremonyDirections,
+  venueLinks.ceremonyDirections,
+  venueLinks.ceremonyDirections,
+  venueLinks.celebrationDirections,
+  venueLinks.celebrationDirections,
+];
+
+const SCHEDULE_IMAGES = [
+  figmaAssets.groomSuit,
+  figmaAssets.brideDress,
+  figmaAssets.ceremonyMap,
+  figmaAssets.registrationSigning,
+  figmaAssets.receptionMap,
+];
 
 function Reveal({
   as: Tag = "div",
@@ -347,34 +369,6 @@ export default function FigmaInvite() {
         </div>
       </section>
 
-      {!countdown.passed && (
-        <section id="countdown" className={styles.countdownSection}>
-          <div className={styles.heroElegantCountdown}>
-            <p className={styles.countdownVerse}>{f.hero.countdownVerse}</p>
-            <p className={styles.countdownVerseRef}>{f.hero.countdownVerseRef}</p>
-            <p className={styles.heroElegantCountdownIntro}>
-              {f.hero.countdownIntro}
-            </p>
-            <div className={styles.heroElegantCountdownItems} aria-live="polite">
-              <div className={styles.heroElegantCountdownItem}>
-                <span className={styles.heroElegantCountdownNum}>{countdown.days}</span>
-                <span className={styles.heroElegantCountdownLabel}>{f.hero.days}</span>
-              </div>
-              <span className={styles.heroElegantCountdownSep}>·</span>
-              <div className={styles.heroElegantCountdownItem}>
-                <span className={styles.heroElegantCountdownNum}>{countdown.hours}</span>
-                <span className={styles.heroElegantCountdownLabel}>{f.hero.hours}</span>
-              </div>
-              <span className={styles.heroElegantCountdownSep}>·</span>
-              <div className={styles.heroElegantCountdownItem}>
-                <span className={styles.heroElegantCountdownNum}>{countdown.mins}</span>
-                <span className={styles.heroElegantCountdownLabel}>{f.hero.mins}</span>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
       <section id="story" className={styles.storyNew}>
         <div className={styles.storyNewInner}>
           <Reveal reducedMotion={reducedMotion}>
@@ -415,203 +409,33 @@ export default function FigmaInvite() {
         </div>
       </section>
 
-      <section id="events" className={styles.eventsNew}>
-        <div className={styles.eventsNewInner}>
-          <Reveal reducedMotion={reducedMotion}>
-            <header className={styles.eventsNewHeader}>
-              <h2 className={styles.eventsNewTitle}>{f.events.title}</h2>
-              <div className={styles.eventsNewDivider}></div>
-            </header>
-          </Reveal>
-          <div
-            className={styles.eventsNewCards}
-          >
-            <Reveal reducedMotion={reducedMotion}>
-              <article className={styles.eventsNewCard}>
-                <div className={styles.eventsNewCardHeader}>
-                  <h3 className={styles.eventsNewCardTitle}>{f.events.ceremonyTitle}</h3>
-                  <span className={styles.eventsNewCardTime}>14:00</span>
-                </div>
-                <p className={styles.eventsNewCardQuote}>
-                  «{f.events.ceremonyQuote}»
-                </p>
-                <div className={styles.eventsNewCardDetails}>
-                  <div className={styles.eventsNewCardLocation}>
-                    <IconPin className={styles.eventsNewCardPin} />
-                    <div>
-                      <p className={styles.eventsNewCardVenue}>
-                        {f.events.ceremonyVenue}
-                      </p>
-                      <p className={styles.eventsNewCardAddress}>
-                        {f.events.ceremonyAddress}
-                      </p>
-                    </div>
-                  </div>
-                  <a
-                    className={styles.eventsNewCardLink}
-                    href={venueLinks.ceremonyDirections}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {f.events.getDirections} →
-                  </a>
-                </div>
-                <div className={styles.eventsNewCardMap}>
-                  <img
-                    src={figmaAssets.ceremonyMap}
-                    alt={f.events.mapAltCeremony}
-                    decoding="async"
-                  />
-                </div>
-              </article>
-            </Reveal>
-            {(
-              <Reveal reducedMotion={reducedMotion} delayMs={120}>
-                <article className={styles.eventsNewCard}>
-                  <div className={styles.eventsNewCardHeader}>
-                    <h3 className={styles.eventsNewCardTitle}>{f.events.celebrationTitle}</h3>
-                    <span className={styles.eventsNewCardTime}>17:00</span>
-                  </div>
-                  <p className={styles.eventsNewCardQuote}>
-                    «{f.events.celebrationQuote}»
-                  </p>
-                  <div className={styles.eventsNewCardDetails}>
-                    <div className={styles.eventsNewCardLocation}>
-                      <IconPin className={styles.eventsNewCardPin} />
-                      <div>
-                        <p className={styles.eventsNewCardVenue}>
-                          {f.events.receptionVenue}
-                        </p>
-                        <p className={styles.eventsNewCardAddress}>
-                          {f.events.receptionAddress}
-                        </p>
-                      </div>
-                    </div>
-                    <a
-                      className={styles.eventsNewCardLink}
-                      href={venueLinks.celebrationDirections}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {f.events.getDirections} →
-                    </a>
-                  </div>
-                  <div className={styles.eventsNewCardMap}>
-                    <img
-                      src={figmaAssets.receptionMap}
-                      alt={f.events.mapAltReception}
-                      decoding="async"
-                    />
-                  </div>
-                </article>
-              </Reveal>
-            )}
+      {!countdown.passed && (
+        <section id="countdown" className={styles.countdownSection}>
+          <div className={styles.heroElegantCountdown}>
+            <p className={styles.countdownVerse}>{f.hero.countdownVerse}</p>
+            <p className={styles.countdownVerseRef}>{f.hero.countdownVerseRef}</p>
+            <p className={styles.heroElegantCountdownIntro}>
+              {f.hero.countdownIntro}
+            </p>
+            <div className={styles.heroElegantCountdownItems} aria-live="polite">
+              <div className={styles.heroElegantCountdownItem}>
+                <span className={styles.heroElegantCountdownNum}>{countdown.days}</span>
+                <span className={styles.heroElegantCountdownLabel}>{f.hero.days}</span>
+              </div>
+              <span className={styles.heroElegantCountdownSep}>·</span>
+              <div className={styles.heroElegantCountdownItem}>
+                <span className={styles.heroElegantCountdownNum}>{countdown.hours}</span>
+                <span className={styles.heroElegantCountdownLabel}>{f.hero.hours}</span>
+              </div>
+              <span className={styles.heroElegantCountdownSep}>·</span>
+              <div className={styles.heroElegantCountdownItem}>
+                <span className={styles.heroElegantCountdownNum}>{countdown.mins}</span>
+                <span className={styles.heroElegantCountdownLabel}>{f.hero.mins}</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section
-        id="attire"
-        className={styles.attireNew}
-        aria-labelledby="attire-heading"
-      >
-        <div className={styles.attireNewTop}>
-          <Reveal reducedMotion={reducedMotion}>
-            <div className={styles.attireNewHeader}>
-              <h2 id="attire-heading" className={styles.attireNewTitle}>
-                {f.attire.title}
-              </h2>
-              {f.attire.leadWomenMark?.trim() || f.attire.leadMenMark?.trim() ? (
-                <div className={styles.attireNewSubtitle}>
-                  {f.attire.leadWomenMark?.trim() ? (
-                    <p className={styles.attireNewSubtitleLine}>
-                      <span className={styles.attireNewSubtitleMark}>
-                        {f.attire.leadWomenMark}
-                      </span>
-                      {f.attire.leadWomenText ?? ""}
-                    </p>
-                  ) : null}
-                  {f.attire.leadMenMark?.trim() ? (
-                    <p className={styles.attireNewSubtitleLine}>
-                      <span className={styles.attireNewSubtitleMark}>
-                        {f.attire.leadMenMark}
-                      </span>
-                      {f.attire.leadMenText ?? ""}
-                    </p>
-                  ) : null}
-                </div>
-              ) : null}
-            </div>
-          </Reveal>
-        </div>
-
-        <div className={styles.attireNewBody}>
-          <Reveal reducedMotion={reducedMotion} delayMs={80}>
-            <div className={styles.attireNewPalette}>
-              <div className={styles.attireNewPaletteHeader}>
-                <span className={styles.attireNewKicker}>
-                  {f.attire.paletteKicker}
-                </span>
-                <h3 className={styles.attireNewPaletteTitle}>
-                  {f.attire.paletteTitle}
-                </h3>
-              </div>
-              <div className={styles.attireNewPaletteGrid}>
-                <div className={styles.attireNewPaletteSection}>
-                  <h4 className={styles.attireNewPaletteSectionTitle}>
-                    {f.attire.forHer}
-                  </h4>
-                  <ul
-                    className={styles.attireNewSwatches}
-                    aria-label={f.attire.womenAria}
-                  >
-                    {f.attire.paletteWomen.map((c) => (
-                      <li
-                        key={`w-${c.hex}-${c.name}`}
-                        className={styles.attireNewSwatch}
-                      >
-                        <span
-                          className={styles.attireNewSwatchColor}
-                          style={{ "--swatch": c.hex }}
-                          aria-hidden
-                        />
-                        <span className={styles.attireNewSwatchName}>
-                          {c.name}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={styles.attireNewPaletteSection}>
-                  <h4 className={styles.attireNewPaletteSectionTitle}>
-                    {f.attire.forHim}
-                  </h4>
-                  <ul
-                    className={styles.attireNewSwatches}
-                    aria-label={f.attire.menAria}
-                  >
-                    {f.attire.paletteMen.map((c) => (
-                      <li
-                        key={`m-${c.hex}-${c.name}`}
-                        className={styles.attireNewSwatch}
-                      >
-                        <span
-                          className={styles.attireNewSwatchColor}
-                          style={{ "--swatch": c.hex }}
-                          aria-hidden
-                        />
-                        <span className={styles.attireNewSwatchName}>
-                          {c.name}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+        </section>
+      )}
 
       {(
         <section
@@ -646,8 +470,8 @@ export default function FigmaInvite() {
                         y2="29"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop offset="0" stopColor="#93b380" />
-                        <stop offset="1" stopColor="#5f7d52" />
+                        <stop offset="0" stopColor="#9cae7f" />
+                        <stop offset="1" stopColor="#899b6c" />
                       </linearGradient>
                     </defs>
                     <path
@@ -659,10 +483,7 @@ export default function FigmaInvite() {
                 </div>
                 <ol className={styles.scheduleList}>
                   {f.schedule.rows.map((row, i) => {
-                    const side =
-                      i % 2 === 0
-                        ? styles.scheduleItemStart
-                        : styles.scheduleItemEnd;
+                    const side = styles.scheduleItemEnd;
                     return (
                       <Reveal
                         key={row.datetime + row.title}
@@ -671,16 +492,30 @@ export default function FigmaInvite() {
                         reducedMotion={reducedMotion}
                         delayMs={i * 36}
                       >
-                        <div className={styles.scheduleRow}>
-                          <time
-                            className={styles.scheduleTime}
-                            dateTime={row.datetime}
+                        {SCHEDULE_IMAGES[i] && (
+                          <div
+                            className={`${styles.scheduleItemImage} ${
+                              i === 0 || i === 1
+                                ? styles.scheduleItemImageZoom
+                                : ""
+                            }`.trim()}
                           >
-                            <span className={styles.scheduleTimeInner}>
-                              {row.time}
-                            </span>
-                          </time>
+                            <img
+                              src={SCHEDULE_IMAGES[i]}
+                              alt=""
+                              aria-hidden="true"
+                              decoding="async"
+                            />
+                          </div>
+                        )}
+                        <div className={styles.scheduleRow}>
                           <div className={styles.scheduleCard}>
+                            <time
+                              className={styles.scheduleTime}
+                              dateTime={row.datetime}
+                            >
+                              {row.time}
+                            </time>
                             <h3 className={styles.scheduleCardTitle}>
                               {row.title}
                             </h3>
@@ -688,7 +523,16 @@ export default function FigmaInvite() {
                             <p className={styles.scheduleDetail}>
                               {row.detail}
                             </p>
-                            <span className={styles.scheduleTag}>{row.tag}</span>
+                            {SCHEDULE_DIRECTIONS[i] && (
+                              <a
+                                className={styles.scheduleCardLink}
+                                href={SCHEDULE_DIRECTIONS[i]}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {f.events.getDirections} →
+                              </a>
+                            )}
                           </div>
                         </div>
                       </Reveal>
@@ -700,6 +544,27 @@ export default function FigmaInvite() {
           </div>
         </section>
       )}
+
+      <section
+        id="attire"
+        className={styles.attireNew}
+        aria-labelledby="attire-heading"
+      >
+        <div className={styles.attireNewTop}>
+          <Reveal reducedMotion={reducedMotion}>
+            <div className={styles.attireNewHeader}>
+              <h2 id="attire-heading" className="srOnly">
+                {f.attire.title}
+              </h2>
+              {f.attire.dressCodeText.map((paragraph, i) => (
+                <p key={i} className={styles.attireDressCodeText}>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <section
         id="roots"
@@ -716,35 +581,56 @@ export default function FigmaInvite() {
             </div>
           </Reveal>
           
-          <div className={styles.rootsNewContent}>
-            <Reveal reducedMotion={reducedMotion} delayMs={100}>
-              <div className={styles.rootsNewVisual}>
-                <div className={styles.rootsNewVisualFrame}>
+          <Reveal reducedMotion={reducedMotion} delayMs={100}>
+            <div className={styles.rootsNewVisual}>
+              <div className={styles.rootsCollage}>
+                <div className={styles.rootsCollageTile}>
                   <img
-                    src={figmaAssets.rootsPhotoPortrait}
+                    src={figmaAssets.rootsCollage.small1}
+                    alt=""
+                    aria-hidden="true"
+                    decoding="async"
+                  />
+                </div>
+                <div className={styles.rootsCollageTile}>
+                  <img
+                    src={figmaAssets.rootsCollage.small2}
+                    alt=""
+                    aria-hidden="true"
+                    decoding="async"
+                  />
+                </div>
+                <div className={styles.rootsCollageTile}>
+                  <img
+                    src={figmaAssets.rootsCollage.small3}
+                    alt=""
+                    aria-hidden="true"
+                    decoding="async"
+                  />
+                </div>
+                <div
+                  className={`${styles.rootsCollageTile} ${styles.rootsCollageBig}`}
+                >
+                  <img
+                    src={figmaAssets.rootsCollage.big}
                     alt={f.roots.altPortrait}
                     decoding="async"
-                    width={1333}
-                    height={2000}
                   />
                 </div>
               </div>
-            </Reveal>
-            
-            <Reveal reducedMotion={reducedMotion} delayMs={180}>
-              <div className={styles.rootsNewText}>
-                <p className={styles.rootsNewLead}>{f.roots.lead}</p>
-                <blockquote className={styles.rootsNewQuote}>
-                  <p>{f.roots.quote}</p>
-                </blockquote>
-                <ul className={styles.rootsNewList}>
-                  <li>{f.roots.li1}</li>
-                  <li>{f.roots.li2}</li>
-                  <li>{f.roots.li3}</li>
-                </ul>
-              </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
+
+          <Reveal reducedMotion={reducedMotion} delayMs={180}>
+            <p className={styles.rootsClosingVerse}>
+              {f.roots.closingVerse.map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < f.roots.closingVerse.length - 1 && <br />}
+                </span>
+              ))}
+            </p>
+          </Reveal>
         </div>
       </section>
 

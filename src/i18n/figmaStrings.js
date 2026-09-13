@@ -4,8 +4,8 @@
 
 const scheduleEn = [
   {
-    time: "10:00",
-    datetime: "2026-10-26T10:00:00",
+    time: "10:30",
+    datetime: "2026-10-26T10:30:00",
     title: "Groom's home",
     place: "Family gathering and blessing",
     detail: "The groom gets ready, surrounded by family and close friends.",
@@ -41,7 +41,7 @@ const scheduleEn = [
     time: "17:30",
     datetime: "2026-10-26T17:30:00",
     title: "Reception",
-    place: "",
+    place: "Vivaldi Hall",
     detail: "The celebration continues with family and friends.",
     tag: "Feast",
   },
@@ -49,8 +49,8 @@ const scheduleEn = [
 
 const scheduleHy = [
   {
-    time: "10:00",
-    datetime: "2026-10-26T10:00:00",
+    time: "10:30",
+    datetime: "2026-10-26T10:30:00",
     title: "Փեսայի տուն",
     place: "Հավաքույթ և օրհնանք փեսայի ընտանիքում",
     detail: "Փեսան պատրաստվում է իր հարազատների և մտերիմ ընկերների հետ։",
@@ -70,7 +70,7 @@ const scheduleHy = [
     title: "Պսակադրություն",
     place: "Մարիամ Աստվածածին եկեղեցի, Նորք Մարաշ",
     detail:
-      "Մենք խոստումներ կտանք մեր ընտանիքի և ընկերների ներկայությամբ։ Խնդրում ենք անջատել հեռախոսների ձայնը և վայելել այս պահը մեզ հետ։",
+      "Մենք խոստումներ կտանք մեր ընտանիքի և ընկերների ներկայությամբ։",
     tag: "Երդում",
   },
   {
@@ -84,17 +84,17 @@ const scheduleHy = [
   {
     time: "17:30",
     datetime: "2026-10-26T17:30:00",
-    title: "Տոնական Խնջույք",
-    place: "",
+    title: "Տոնական խնջույք",
+    place: "Վիվալդի Հոլլ",
     detail: "Տոնակատարությունը շարունակվում է հարազատների և ընկերների հետ։",
-    tag: "Տոնական Խնջույք",
+    tag: "Տոնական խնջույք",
   },
 ];
 
 const scheduleRu = [
   {
-    time: "10:00",
-    datetime: "2026-10-26T10:00:00",
+    time: "10:30",
+    datetime: "2026-10-26T10:30:00",
     title: "Дом жениха",
     place: "Сбор и благословение в семье жениха",
     detail: "Жених готовится в окружении родных и близких друзей.",
@@ -129,71 +129,12 @@ const scheduleRu = [
     time: "17:30",
     datetime: "2026-10-26T17:30:00",
     title: "Банкет",
-    place: "",
+    place: "Vivaldi Hall",
     detail: "Праздник продолжается в кругу семьи и друзей.",
     tag: "Банкет",
   },
 ];
 
-const paletteWomenEn = [
-  { hex: "#7a8c7e", name: "Sage" },
-  { hex: "#b8918d", name: "Blush" },
-  { hex: "#c4a574", name: "Champagne" },
-  { hex: "#b8d4e3", name: "Light blue" },
-  { hex: "#8b7d82", name: "Dusty mauve" },
-  { hex: "#4a6f5c", name: "Eucalyptus" },
-  { hex: "#cb6c75", name: "Rose" },
-  { hex: "#f5d4cf", name: "Petal pink" },
-];
-
-const paletteWomenHy = [
-  { hex: "#7a8c7e", name: "Շալֆեյ (Sage)" },
-  { hex: "#b8918d", name: "Մուգ վարդագույն (Blush)" },
-  { hex: "#c4a574", name: "Շամպայն" },
-  { hex: "#b8d4e3", name: "Թեթև կապույտ" },
-  { hex: "#8b7d82", name: "Մուգ մանուշակագույն" },
-  { hex: "#4a6f5c", name: "Եվկալիպտ" },
-  { hex: "#cb6c75", name: "Վարդագույն" },
-  { hex: "#f5d4cf", name: "Բաց վարդագույն" },
-];
-
-const paletteMenEn = [
-  { hex: "#1b3022", name: "Forest" },
-  { hex: "#3d5244", name: "Moss" },
-  { hex: "#2a3540", name: "Midnight" },
-  { hex: "#1a1a1a", name: "Black" },
-  { hex: "#4a4a48", name: "Charcoal" },
-  { hex: "#d4c4a8", name: "Sand" },
-];
-
-const paletteMenHy = [
-  { hex: "#1b3022", name: "Անտառագույն" },
-  { hex: "#3d5244", name: "Մամուռ" },
-  { hex: "#2a3540", name: "Կեսգիշեր" },
-  { hex: "#1a1a1a", name: "Սև" },
-  { hex: "#4a4a48", name: "Մուգ մոխրագույն" },
-  { hex: "#d4c4a8", name: "Ավազագույն" },
-];
-
-const paletteWomenRu = [
-  { hex: "#7a8c7e", name: "Шалфей" },
-  { hex: "#b8918d", name: "Тёмный румянец" },
-  { hex: "#c4a574", name: "Шампанское" },
-  { hex: "#b8d4e3", name: "Светло-голубой" },
-  { hex: "#8b7d82", name: "Темно-лиловый" },
-  { hex: "#4a6f5c", name: "Эвкалипт" },
-  { hex: "#cb6c75", name: "Розовый" },
-  { hex: "#f5d4cf", name: "Нежно-розовый" },
-];
-
-const paletteMenRu = [
-  { hex: "#1b3022", name: "Лесной" },
-  { hex: "#3d5244", name: "Мох" },
-  { hex: "#2a3540", name: "Полночь" },
-  { hex: "#1a1a1a", name: "Черный" },
-  { hex: "#4a4a48", name: "Угольный" },
-  { hex: "#d4c4a8", name: "Песочный" },
-];
 
 export const figmaByLang = {
   en: {
@@ -226,9 +167,15 @@ export const figmaByLang = {
     },
     story: {
       eyebrow: "Our Journey",
-      heading: "How we found each other, and kept choosing one another.",
+      heading: "The First Page of Our Love",
       lead: [
-        "It began in the most ordinary way, during a work meeting in the office, where a conversation lingered just a little longer than expected and the professional line quietly softened into curiosity, then friendship, and eventually something neither of us saw coming. What started as routine grew into a connection no agenda or calendar could predict, unfolding naturally until a simple, real-life moment turned everything into a shared future, honest, unexpected, and deeply ours.",
+        "A story that began back in our school years.",
+        "\"The first day I walked into school, you were the only one I could see… A + A = ❤️\" These words were spoken back on 15.01.2010…",
+        "A question was asked, and its answer was long in coming…",
+        "Years passed, friendship became love, and love will soon become family.",
+        "16 years later, by God's will, we found each other again. What began in our school years has today become our most cherished story.",
+        "And now we're ready to write that story's most beautiful page — the beginning of our family. 🤍",
+        "The next page of this story, born of love, will be written on the very day we say \"I do\" to each other.",
       ],
       altPortrait: "Andranik and Anushik, portrait",
     },
@@ -252,34 +199,10 @@ export const figmaByLang = {
     attire: {
       eyebrow: "Dress the part",
       title: "What to wear & which colours feel at home",
-      leadWomenMark: "Ladies",
-      leadWomenText: ", please avoid black, red, white, and cream.",
-      leadMenMark: "Gentlemen",
-      leadMenText: ", formal attire is appreciated.",
-      codeKicker: "",
-      codeTitle: "",
-      codeP1:
-        "Think of the day in two chapters: the ceremony at Saint Anna, then celebration among the gardens and halls of Art Village. Long or midi dresses, tailored suits, and polished separates all feel at home, we love when you dress up a little, in whatever shape that takes for you.",
-      codeP2:
-        "Layers are your friend: June light can be warm, and the evening may cool once the sun drops. Nothing has to match perfectly; we care most that you feel comfortable moving from stone and pew to lawn, terrace, and dance floor without a second thought.",
-      bullet1:
-        "Fabrics that breathe: linen, silk, light wool, crepe, anything that drapes and moves with you through a long, happy day",
-      bullet2:
-        "Heels are welcome; a block heel, wedge, or elegant flat will be kinder on grass and gravel between venues",
-      bullet3:
-        "For suits, black is absolutely welcome, alongside navy, charcoal, greens, or anything in the palette below. A well-fitted jacket and trousers (or refined separates) photographs beautifully beside softer dress tones",
-      bullet4:
-        "A wrap, shawl, or light jacket for after sunset, especially if you run cool when the music starts",
-      bullet5:
-        "Small bag or clutch is plenty; you won't need to carry much once you're with us",
-      paletteKicker: "Palette",
-      paletteTitle: "Colours we're dreaming of",
-      forHer: "For her",
-      forHim: "For him",
-      womenAria: "Suggested colours for women",
-      menAria: "Suggested colours for men",
-      paletteWomen: paletteWomenEn,
-      paletteMen: paletteMenEn,
+      dressCodeText: [
+        "Dress code: your choice — a smile and high spirits are mandatory. 🤍",
+        "\"For our little guests too, may this day be safe and carefree, with mothers' loving attention especially close by during special moments. 🤍\"",
+      ],
     },
     schedule: {
       eyebrow: "The Day Unfolds",
@@ -298,12 +221,18 @@ export const figmaByLang = {
       li2: "Celebrating cousins, siblings, and friends who already feel like kin.",
       li3: "Looking ahead to the memories we'll make, anniversaries, holidays, and ordinary Tuesdays.",
       altPortrait: "Andranik and Anushik, hand in hand by the water",
+      closingVerse: [
+        "And if one day someone asks where our \"us\" began,",
+        "we'll always have the same answer:",
+        "it started many years ago,",
+        "and became forever on 26.10.26.",
+      ],
     },
     rsvp: {
       eyebrow: "RSVP",
       heading: "Kindly confirm your attendance",
       intro:
-        "Please confirm your attendance and fill out the form below by October 5, 2026.",
+        "Please confirm your attendance and fill out the form below by 10.10.26.",
       nameLabel: "First name",
       surnameLabel: "Last name",
       guestOfLabel: "Whose guest are you",
@@ -360,12 +289,12 @@ export const figmaByLang = {
       heading: "Մեր սիրո առաջին էջը",
       lead: [
         "Մի պատմություն, որը սկսվեց դպրոցական տարիքից։",
-        "«Երբ առաջին անգամ մտա դպրոց, իմ աչքին միայն դու երեւացիր…Ա+ Ա = ❤️» Այս խոսքերն ասվել են դեռ 16 տարի առաջ՝ 15.01.2010թ …",
+        "«Երբ առաջին անգամ մտա դպրոց, միայն դու իմ աչքին երևացիր…Ա+ Ա = ❤️» Այս խոսքերն ասվել են դեռ՝ 15.01.2010թ-ին…",
         "Տրվեց Մի հարց, որի պատասխանը ուշացավ…",
         "Անցան տարիներ, ընկերությունը դարձավ սեր, իսկ սերը՝ շուտով կդառնա ընտանիք։",
-        "16 տարի անց, Աստծո կամոք, մենք նորից գտանք իրար։ Այն, ինչ սկսվել էր դպրոցական տարիներին, այսօր դարձել է մեր ամենասիրելի պատմությունը, որը տարիների ընթացքում չավարտվեց, այլ պարզապես սպասեց իր շարունակությանը։",
-        "Եվ հիմա մենք պատրաստ ենք գրել մեր պատմության ամենագեղեցիկ էջը՝ մեր ընտանիքի սկիզբը։ 🤍",
-        "Սիրուց ծնված այս պատմության հաջորդ էջը կգրվի հենց այն օրը, երբ մենք միմյանց կասենք՝ «Այո՛»։ 26.10.26",
+        "16 տարի անց, Աստծո կամոք, մենք նորից գտանք իրար։ Այն, ինչ սկսվել էր դպրոցական տարիներին, այսօր դարձել է մեր ամենասիրելի պատմությունը։",
+        "Եվ հիմա մենք պատրաստ ենք գրել այդ պատմության ամենագեղեցիկ էջը՝ մեր ընտանիքի սկիզբը։ 🤍",
+        "Սիրուց ծնված այս պատմության հաջորդ էջը կգրվի հենց այն օրը, երբ մենք միմյանց կասենք՝ «Այո՛»։",
       ],
       altPortrait: "Անդրանիկ և Անուշիկ",
     },
@@ -374,7 +303,7 @@ export const figmaByLang = {
       title: "Որտեղ և Երբ",
       ceremonyTitle: "Պսակադրություն",
       ceremonyQuote: "Սուրբ միություն՝ քարի ու հոգու նուրբ շշնջյունների ներքո։",
-      celebrationTitle: "Տոնական Խնջույք",
+      celebrationTitle: "Տոնական խնջույք",
       celebrationQuote:
         "Էլեգանտ երեկո՝ երդումներով, կենացներով և պարով՝ Վիվալդի Հոլլում։",
       getDirections: "Ցույց տալ երթուղին",
@@ -388,33 +317,10 @@ export const figmaByLang = {
     attire: {
       eyebrow: "Դրես-կոդ",
       title: "Ինչ հագնել և որ գույներն ընտրել",
-      leadWomenMark: "Կանայք",
-      leadWomenText: ", խնդրում ենք չհագնել սև, կարմիր, սպիտակ և կրեմային գույներ։",
-      leadMenMark: "Տղամարդիկ",
-      leadMenText: ", խնդրում ենք ներկայանալ պաշտոնական հագուստով",
-      codeKicker: "",
-      codeTitle: "",
-      codeP1:
-        "Մեր օրը բաղկացած է լինելու երկու մասից. պսակադրություն Սուրբ Աննա եկեղեցում, ապա տոնակատարություն Art Village-ի այգիներում։ Երկար կամ միդի զգեստները, նրբաճաշակ կոստյումներն ու համադրված հագուստները շատ տեղին կլինեն. մեզ դուր է գալիս, երբ դուք գեղեցիկ եք հագնվում՝ պահպանելով ձեր անհատական ոճը։",
-      codeP2:
-        "Խորհուրդ ենք տալիս հագնվել շերտերով, քանի որ հունիսյան արևը կարող է տաք լինել, իսկ երեկոյան՝ մայրամուտից հետո, օդը կզովանա։ Ամեն ինչ չէ, որ պետք է կատարյալ համադրված լինի. մեզ համար ամենակարևորն այն է, որ դուք ձեզ հարմարավետ զգաք՝ անհոգ քայլելով եկեղեցու բակից դեպի խոտածածկ այգիներ և պարահարթակ։",
-      bullet1:
-        "Շնչող գործվածքներ՝ վուշ (linen), մետաքս, թեթև բուրդ, կրեպ. այնպիսի կտորներ, որոնք թեթև են և հարմարավետ երկար ու ուրախ օրվա համար։",
-      bullet2:
-        "Բարձրակրունկները ողջունելի են, սակայն հաստ կրունկով կամ հարթ տակացուով կոշիկները շատ ավելի հարմար կլինեն խոտածածկի և քարերի վրա քայլելիս։",
-      bullet3:
-        "Կոստյումների դեպքում սև գույնը միանշանակ ընդունելի է՝ մուգ կապույտի, մուգ մոխրագույնի, կանաչի կամ ներքևում նշված գունապնակի ցանկացած այլ գույնի հետ մեկտեղ։",
-      bullet4:
-        "Շալ կամ թեթև բաճկոն մայրամուտից հետո հագնելու համար, հատկապես երբ երաժշտությունը սկսվի և երեկոն զովանա։",
-      bullet5: "Փոքրիկ պայուսակը կամ կլատչը միանգամայն բավական են։",
-      paletteKicker: "Գունապնակ",
-      paletteTitle: "Գույներ, որոնք մենք պատկերացնում ենք",
-      forHer: "Կանանց համար",
-      forHim: "Տղամարդկանց համար",
-      womenAria: "Առաջարկվող գույներ կանանց համար",
-      menAria: "Առաջարկվող գույներ տղամարդկանց համար",
-      paletteWomen: paletteWomenHy,
-      paletteMen: paletteMenHy,
+      dressCodeText: [
+        "Դրես-կոդը՝ ձեր ընտրությամբ, իսկ ժպիտն ու բարձր տրամադրությունը՝ պարտադիր։ 🤍",
+        "«Մեր փոքրիկ հյուրերի համար էլ թող այս օրը լինի անվտանգ ու անհոգ, իսկ մայրիկների սիրուն ուշադրությունը՝ նրանց կողքին հատկապես հատուկ պահերին։ 🤍»",
+      ],
     },
     schedule: {
       eyebrow: "Օրվա ընթացքը",
@@ -433,11 +339,17 @@ export const figmaByLang = {
       li2: "Տոնում ենք մեր քույրերի, եղբայրների, զարմիկների և ընկերների հետ, որոնք արդեն հարազատ են դարձել։",
       li3: "Անհամբեր սպասում ենք այն հուշերին, տարեդարձերին, տոներին ու հասարակ երեքշաբթիներին, որոնք դեռ պիտի ստեղծենք։",
       altPortrait: "Անդրանիկ և Անուշիկ, ձեռք ձեռքի ջրի եզերքին",
+      closingVerse: [
+        "Ու եթե մի օր հարցնեն, թե որտեղից սկսվեց մեր «մենք»-ը,",
+        "մենք միշտ կունենանք նույն պատասխանը՝",
+        "այն սկսվեց շատ տարիներ առաջ,",
+        "իսկ հավերժ դարձավ՝ 26.10.26-ին։",
+      ],
     },
     rsvp: {
       eyebrow: "Հաստատում",
       heading: "Խնդրում ենք հաստատել Ձեր ներկայությունը",
-      intro: "Լրացնել հարցաթերթիկը մինչև 20.10.26թ.։",
+      intro: "Լրացնել հարցաթերթիկը մինչև 10.10.26թ.։",
       nameLabel: "Անուն",
       surnameLabel: "Ազգանուն",
       guestOfLabel: "Ում հյուրն եք",
@@ -491,9 +403,15 @@ export const figmaByLang = {
     },
     story: {
       eyebrow: "Наш путь",
-      heading: "Как мы нашли и выбрали друг друга.",
+      heading: "Первая страница нашей любви",
       lead: [
-        "Всё началось самым обыкновенным образом — на рабочей встрече в офисе, когда разговор затянулся чуть дольше обычного и профессиональная граница незаметно смягчилась в интерес, затем в дружбу и наконец в нечто такое, чего мы сами не ожидали. То, что казалось рутиной, переросло в связь, которую не предугадал бы ни план, ни календарь, и всё развивалось естественно, пока простой, настоящий жизненный миг не превратил всё в общее будущее — честное, неожиданное и по-настоящему наше.",
+        "История, которая началась ещё в школьные годы.",
+        "«С первого дня в школе для меня существовала только ты… А + А = ❤️» Эти слова были произнесены ещё 15.01.2010…",
+        "Был задан вопрос, ответ на который пришлось долго ждать…",
+        "Прошли годы, дружба превратилась в любовь, а любовь совсем скоро станет семьёй.",
+        "16 лет спустя, по воле Божьей, мы снова нашли друг друга. То, что началось в школьные годы, сегодня стало нашей самой дорогой историей.",
+        "И теперь мы готовы написать самую красивую страницу этой истории — начало нашей семьи. 🤍",
+        "Следующая страница этой истории, рождённой любовью, будет написана в тот день, когда мы скажем друг другу «Да».",
       ],
       altPortrait: "Андраник и Анушик",
     },
@@ -516,33 +434,10 @@ export const figmaByLang = {
     attire: {
       eyebrow: "Дресс-код",
       title: "Что надеть и какие цвета выбрать",
-      leadWomenMark: "Дамы",
-      leadWomenText: ", просим избегать чёрного, красного, белого и кремового.",
-      leadMenMark: "Джентльмены",
-      leadMenText: ", будем признательны за формальный наряд.",
-      codeKicker: "",
-      codeTitle: "",
-      codeP1:
-        "Наш день будет состоять из двух частей: венчание в церкви Святой Анны, а затем торжество в садах и залах Art Village. Длинные платья или платья миди, элегантные костюмы и продуманные сочетания будут весьма уместны. Нам очень нравится, когда вы красиво наряжаетесь, сохраняя свой индивидуальный стиль.",
-      codeP2:
-        "Советуем одеваться многослойно, так как июньское солнце может быть жарким, а вечером, после заката, станет прохладно. Не всё должно идеально сочетаться: для нас важнее всего, чтобы вы чувствовали себя комфортно, беззаботно переходя из церковного двора в зеленые сады и на танцпол.",
-      bullet1:
-        "Дышащие ткани: лен, шелк, легкая шерсть, креп — материалы, которые легки и удобны для длинного, радостного дня.",
-      bullet2:
-        "Высокие каблуки приветствуются, однако туфли на толстом каблуке, танкетке или плоской подошве будут гораздо удобнее при ходьбе по газону и камням.",
-      bullet3:
-        "Для костюмов черный цвет однозначно подходит, наряду с темно-синим, темно-серым, зеленым или любым другим цветом из палитры ниже.",
-      bullet4:
-        "Шаль или легкий пиджак для вечера — особенно когда начнется музыка и станет прохладно.",
-      bullet5: "Маленькой сумочки или клатча будет вполне достаточно.",
-      paletteKicker: "Палитра",
-      paletteTitle: "Цвета, о которых мы мечтаем",
-      forHer: "Для нее",
-      forHim: "Для него",
-      womenAria: "Рекомендуемые цвета для женщин",
-      menAria: "Рекомендуемые цвета для мужчин",
-      paletteWomen: paletteWomenRu,
-      paletteMen: paletteMenRu,
+      dressCodeText: [
+        "Дресс-код — на ваш выбор, а улыбка и хорошее настроение — обязательны. 🤍",
+        "«Пусть этот день будет безопасным и беззаботным и для наших маленьких гостей, а внимание мам будет особенно рядом в особенные моменты. 🤍»",
+      ],
     },
     schedule: {
       eyebrow: "Программа дня",
@@ -561,12 +456,18 @@ export const figmaByLang = {
       li2: "Празднуем с нашими братьями, сестрами, кузенами и друзьями, которые уже стали родными.",
       li3: "С нетерпением ждем воспоминаний, годовщин, праздников и простых вторников, которые нам еще предстоит создать.",
       altPortrait: "Андраник и Анушик, держась за руки у воды",
+      closingVerse: [
+        "И если однажды нас спросят, с чего началось наше «мы»,",
+        "у нас всегда будет один и тот же ответ:",
+        "это началось много лет назад,",
+        "а навсегда стало 26.10.26.",
+      ],
     },
     rsvp: {
       eyebrow: "Подтверждение",
       heading: "Просим подтвердить ваше присутствие",
       intro:
-        "Пожалуйста, подтвердите свое присутствие и заполните форму ниже до 5 сентября 2026 г.",
+        "Пожалуйста, подтвердите своё присутствие и заполните форму ниже до 10.10.26.",
       nameLabel: "Имя",
       surnameLabel: "Фамилия",
       guestOfLabel: "Вы гость со стороны",

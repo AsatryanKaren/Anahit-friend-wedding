@@ -1,9 +1,9 @@
 :root {
-  --ink: #2d1820;
-  /* Blush cream background */
-  --cream: #fef5f3;
+  --ink: #2b2620;
+  /* Warm ivory paper background */
+  --cream: #f7f2e6;
   --sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --serif: "Noto Serif", ui-serif, Georgia, serif;
+  --serif: "Noto Serif", "Noto Serif Armenian", ui-serif, Georgia, serif;
 }
 
 *,
@@ -51,7 +51,7 @@ textarea {
 }
 
 ::selection {
-  background: rgba(203, 108, 117, 0.18);
+  background: rgba(122, 98, 60, 0.18);
 }
 
 .srOnly {

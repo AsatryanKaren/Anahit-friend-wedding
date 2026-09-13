@@ -13,11 +13,11 @@
   height: 40px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(184, 115, 110, 0.2);
-  box-shadow: 0 4px 16px rgba(203, 108, 117, 0.12);
+  border: 1px solid rgba(150, 128, 88, 0.2);
+  box-shadow: 0 4px 16px rgba(122, 98, 60, 0.12);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: rgba(184, 115, 110, 0.88);
+  color: rgba(150, 128, 88, 0.88);
   cursor: pointer;
   padding: 0;
   transition:
@@ -28,11 +28,11 @@
 
 .button:hover {
   background: rgba(255, 255, 255, 0.97);
-  color: rgba(74, 38, 51, 1);
+  color: rgba(58, 50, 38, 1);
 }
 
 .button:focus-visible {
-  outline: 2px solid rgba(184, 115, 110, 0.7);
+  outline: 2px solid rgba(150, 128, 88, 0.7);
   outline-offset: 3px;
 }
 
