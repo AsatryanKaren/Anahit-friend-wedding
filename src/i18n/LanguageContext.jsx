@@ -1,53 +1,23 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo } from "react";
 import { translations } from "./translations.js";
 import { applyShareMeta } from "../shareMeta.js";
 
-const STORAGE_KEY = "wedding-invitation-lang";
+const LANG = "hy";
 
 const LanguageContext = createContext(null);
 
 export function LanguageProvider({ children }) {
-  const [lang, setLangState] = useState(() => {
-    if (typeof window === "undefined") return "hy";
-
-    // 1. Check URL parameters (standard way: ?lang=en)
-    const params = new URLSearchParams(window.location.search);
-    let urlLang = params.get("lang");
-    
-    // Normalize "am" to "hy"
-    if (urlLang === "am") urlLang = "hy";
-
-    if (urlLang === "en" || urlLang === "hy" || urlLang === "ru") {
-      window.localStorage.setItem(STORAGE_KEY, urlLang);
-      return urlLang;
-    }
-
-    // 2. Check local storage
-    const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved === "en" || saved === "hy" || saved === "ru") return saved;
-
-    // 3. Fallback to default
-    return "hy";
-  });
-
-  const setLang = (next) => {
-    if (next !== "en" && next !== "hy" && next !== "ru") return;
-    setLangState(next);
-    window.localStorage.setItem(STORAGE_KEY, next);
-  };
-
-  const t = useMemo(() => translations[lang], [lang]);
+  const t = translations[LANG];
 
   useEffect(() => {
-    document.documentElement.lang =
-      lang === "hy" ? "hy" : lang === "ru" ? "ru" : "en";
-  }, [lang]);
+    document.documentElement.lang = LANG;
+  }, []);
 
   useEffect(() => {
-    applyShareMeta(lang);
-  }, [lang]);
+    applyShareMeta(LANG);
+  }, []);
 
-  const value = useMemo(() => ({ lang, setLang, t }), [lang, t]);
+  const value = useMemo(() => ({ lang: LANG, t }), [t]);
 
   return (
     <LanguageContext.Provider value={value}>

@@ -7,10 +7,10 @@ import vivaldiHallIllustration from "../assets/vivaldi-hall-illustration.webp";
 import brideDressIllustration from "../assets/bride-dress-illustration.jpg";
 import groomSuitIllustration from "../assets/groom-suit-illustration.jpg";
 import registrationSigningIllustration from "../assets/registration-signing-illustration.jpg";
-import collageLift from "../assets/collage-lift.jpg";
-import collagePortrait1 from "../assets/collage-portrait-1.jpg";
 import collagePortrait2 from "../assets/collage-portrait-2.jpg";
 import collageWalking from "../assets/collage-walking.jpg";
+import collageSitting from "../assets/collage-sitting.jpg";
+import collageWalkingWide from "../assets/collage-walking-wide.jpg";
 
 /** Hero background: the couple, by the sea */
 export const heroCouplePhoto = {
@@ -37,9 +37,9 @@ export const figmaAssets = {
   registrationSigning: registrationSigningIllustration,
   /** Rooted Together: beach photo collage */
   rootsCollage: {
-    big: collageLift,
-    small1: collagePortrait1,
-    small2: collagePortrait2,
+    big: collagePortrait2,
+    small1: collageWalkingWide,
+    small2: collageSitting,
     small3: collageWalking,
   },
 };

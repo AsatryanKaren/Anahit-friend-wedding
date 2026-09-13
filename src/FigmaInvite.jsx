@@ -10,7 +10,6 @@ import {
   RegistrationIcon,
   ToastIcon,
 } from "./components/ScheduleIcons.jsx";
-import { LanguageSwitcher } from "./components/LanguageSwitcher/LanguageSwitcher.jsx";
 import { MusicToggle } from "./components/MusicToggle/MusicToggle.jsx";
 import { useI18n } from "./i18n/LanguageContext.jsx";
 import {
@@ -262,7 +261,7 @@ function RsvpForm({ f }) {
 }
 
 export default function FigmaInvite() {
-  const { lang, setLang, t } = useI18n();
+  const { t } = useI18n();
   const f = t.figma;
   const countdown = useWeddingCountdown(WEDDING_AT);
   const reducedMotion = useReducedMotion();
@@ -316,12 +315,6 @@ export default function FigmaInvite() {
 
   return (
     <div className={styles.page} data-motion={motion}>
-      <LanguageSwitcher
-        lang={lang}
-        onChange={setLang}
-        labels={t.language}
-        variant="corner"
-      />
       <MusicToggle labels={t.music} />
 
       <section
