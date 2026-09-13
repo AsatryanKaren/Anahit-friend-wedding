@@ -301,7 +301,7 @@ export const figmaByLang = {
       ],
       altPortrait: "Անդրանիկ և Անուշիկ",
       noteAlt: "Ձեռագիր սիրային նամակ, պահված 2010 թվականից",
-      noteCaption: "Օրիգինալը մեր սիրո առաջին էջի, սեղմիր որ տեսնես",
+      noteCaption: "Օրիգինալը մեր սիրո առաջին էջի, սեղմեք որ տեսնեք",
       noteCloseAria: "Փակել",
     },
     events: {
