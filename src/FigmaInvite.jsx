@@ -564,7 +564,7 @@ export default function FigmaInvite() {
                           <div
                             className={[
                               styles.scheduleItemImage,
-                              [0, 1, 3, 4].includes(i)
+                              [0, 1, 4].includes(i)
                                 ? styles.scheduleItemImagePlain
                                 : "",
                               i === 1 ? styles.scheduleItemImageBride : "",

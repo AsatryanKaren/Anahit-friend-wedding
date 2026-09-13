@@ -2187,7 +2187,8 @@
   border: none;
 }
 
-.scheduleItemImageChurch {
+.scheduleItemImageChurch,
+.scheduleItemImageCert {
   border-radius: 0;
   box-shadow: none;
   border: none;
@@ -2210,7 +2211,7 @@
 }
 
 .scheduleItemImageCert img {
-  transform: scale(0.75);
+  transform: scale(0.85);
 }
 
 .scheduleItemImageDance img {
