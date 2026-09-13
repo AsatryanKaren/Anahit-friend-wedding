@@ -2187,6 +2187,12 @@
   border: none;
 }
 
+.scheduleItemImageChurch {
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
 .scheduleItemImage img {
   display: block;
   width: 100%;

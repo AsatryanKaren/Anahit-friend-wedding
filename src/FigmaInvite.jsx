@@ -568,6 +568,7 @@ export default function FigmaInvite() {
                                 ? styles.scheduleItemImagePlain
                                 : "",
                               i === 1 ? styles.scheduleItemImageBride : "",
+                              i === 2 ? styles.scheduleItemImageChurch : "",
                               i === 3 ? styles.scheduleItemImageCert : "",
                               i === 4 ? styles.scheduleItemImageDance : "",
                             ]

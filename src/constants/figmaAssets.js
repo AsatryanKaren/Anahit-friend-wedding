@@ -2,7 +2,7 @@ import heroCoupleWebp1400 from "../assets/hero-couple-1400.webp";
 import heroCoupleWebp800 from "../assets/hero-couple-800.webp";
 import heroCoupleJpg1400 from "../assets/hero-couple-1400.jpg";
 import storyCouplePhoto from "../assets/story-couple.jpg";
-import churchIllustration from "../assets/church-illustration.jpg";
+import churchIllustration from "../assets/church-illustration.png";
 import receptionDanceIllustration from "../assets/reception-dance-illustration.png";
 import brideHairIllustration from "../assets/bride-hair-illustration.png";
 import groomTuxedoIllustration from "../assets/groom-tuxedo-illustration.png";
