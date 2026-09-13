@@ -271,6 +271,16 @@ export default function FigmaInvite() {
   const f = t.figma;
   const countdown = useWeddingCountdown(WEDDING_AT);
   const reducedMotion = useReducedMotion();
+  const [noteOpen, setNoteOpen] = useState(false);
+
+  useEffect(() => {
+    if (!noteOpen) return undefined;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setNoteOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [noteOpen]);
 
   const motion = reducedMotion ? "reduce" : "full";
 
@@ -418,11 +428,49 @@ export default function FigmaInvite() {
                     {withThemedHearts(paragraph)}
                   </p>
                 ))}
+                <button
+                  type="button"
+                  className={styles.storyNoteThumb}
+                  onClick={() => setNoteOpen(true)}
+                  aria-haspopup="dialog"
+                >
+                  <img
+                    src={figmaAssets.loveLetterNote}
+                    alt={f.story.noteAlt}
+                    decoding="async"
+                  />
+                </button>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
+
+      {noteOpen && (
+        <div
+          className={styles.storyNoteOverlay}
+          role="dialog"
+          aria-modal="true"
+          aria-label={f.story.noteAlt}
+          onClick={() => setNoteOpen(false)}
+        >
+          <button
+            type="button"
+            className={styles.storyNoteClose}
+            onClick={() => setNoteOpen(false)}
+            aria-label={f.story.noteCloseAria}
+          >
+            ×
+          </button>
+          <img
+            className={styles.storyNoteFull}
+            src={figmaAssets.loveLetterNote}
+            alt={f.story.noteAlt}
+            decoding="async"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       {!countdown.passed && (
         <section id="countdown" className={styles.countdownSection}>
@@ -510,7 +558,7 @@ export default function FigmaInvite() {
                         {SCHEDULE_IMAGES[i] && (
                           <div
                             className={`${styles.scheduleItemImage} ${
-                              i === 0 || i === 1
+                              i === 0 || i === 1 || i === 3
                                 ? styles.scheduleItemImagePlain
                                 : ""
                             }`.trim()}

@@ -6,12 +6,13 @@ import churchIllustration from "../assets/church-illustration.jpg";
 import vivaldiHallIllustration from "../assets/vivaldi-hall-illustration.webp";
 import brideHairIllustration from "../assets/bride-hair-illustration.png";
 import groomTuxedoIllustration from "../assets/groom-tuxedo-illustration.png";
-import registrationSigningIllustration from "../assets/registration-signing-illustration.jpg";
+import registrationCertificateIcon from "../assets/registration-certificate-icon.png";
 import collagePortrait2 from "../assets/collage-portrait-2.jpg";
 import collageWalking from "../assets/collage-walking.jpg";
 import collageSitting from "../assets/collage-sitting.jpg";
 import collageWalkingWide from "../assets/collage-walking-wide.jpg";
 import rsvpSuccessIllustration from "../assets/rsvp-success-illustration.png";
+import loveLetterNote from "../assets/love-letter-note.jpeg";
 
 /** Hero background: the couple, by the sea */
 export const heroCouplePhoto = {
@@ -34,8 +35,8 @@ export const figmaAssets = {
   brideDress: brideHairIllustration,
   /** Groom's house: tuxedo illustration */
   groomSuit: groomTuxedoIllustration,
-  /** Civil ceremony: signing the marriage registration */
-  registrationSigning: registrationSigningIllustration,
+  /** Civil ceremony: marriage certificate icon */
+  registrationSigning: registrationCertificateIcon,
   /** Rooted Together: beach photo collage */
   rootsCollage: {
     big: collagePortrait2,
@@ -45,6 +46,8 @@ export const figmaAssets = {
   },
   /** RSVP form: success state illustration */
   rsvpSuccess: rsvpSuccessIllustration,
+  /** Our Journey: handwritten love note keepsake */
+  loveLetterNote: loveLetterNote,
 };
 
 /** Maps: driving-directions links (destination-only; Google Maps fills in the origin) */

@@ -178,6 +178,8 @@ export const figmaByLang = {
         "The next page of this story, born of love, will be written on the very day we say \"I do\" to each other.",
       ],
       altPortrait: "Andranik and Anushik, portrait",
+      noteAlt: "A handwritten love note, kept since 2010",
+      noteCloseAria: "Close",
     },
     events: {
       eyebrow: "The Celebration",
@@ -297,6 +299,8 @@ export const figmaByLang = {
         "Սիրուց ծնված այս պատմության հաջորդ էջը կգրվի հենց այն օրը, երբ մենք միմյանց կասենք՝ «Այո՛»։",
       ],
       altPortrait: "Անդրանիկ և Անուշիկ",
+      noteAlt: "Ձեռագիր սիրային նամակ, պահված 2010 թվականից",
+      noteCloseAria: "Փակել",
     },
     events: {
       eyebrow: "Տոնակատարությունը",
@@ -414,6 +418,8 @@ export const figmaByLang = {
         "Следующая страница этой истории, рождённой любовью, будет написана в тот день, когда мы скажем друг другу «Да».",
       ],
       altPortrait: "Андраник и Анушик",
+      noteAlt: "Рукописная любовная записка, хранимая с 2010 года",
+      noteCloseAria: "Закрыть",
     },
     events: {
       eyebrow: "Торжество",
