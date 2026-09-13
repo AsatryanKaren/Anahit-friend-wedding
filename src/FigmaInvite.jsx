@@ -23,8 +23,8 @@ import { useEffect, useRef, useState } from "react";
 const WEDDING_AT = new Date("2026-10-26T14:00:00");
 
 const SCHEDULE_DIRECTIONS = [
-  venueLinks.ceremonyDirections,
-  venueLinks.ceremonyDirections,
+  venueLinks.groomHouseDirections,
+  venueLinks.brideHouseDirections,
   venueLinks.ceremonyDirections,
   venueLinks.celebrationDirections,
   venueLinks.celebrationDirections,

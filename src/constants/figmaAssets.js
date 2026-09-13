@@ -56,4 +56,6 @@ export const venueLinks = {
     "https://www.google.com/maps/dir/?api=1&destination=Surp+Mariam+Astvatsatsin+Church+Nork+Marash+Yerevan+Armenia",
   celebrationDirections:
     "https://www.google.com/maps/dir/?api=1&destination=Vivaldi+Hall+Yerevan+Armenia",
+  groomHouseDirections: "https://maps.app.goo.gl/ET23iQkxtst2SCTU7",
+  brideHouseDirections: "https://maps.app.goo.gl/NskTeCgykEG6Rygt9",
 };
