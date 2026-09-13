@@ -2194,7 +2194,8 @@
 
 @media (max-width: 780px) {
   .scheduleItemImage {
-    display: none;
+    right: calc(50% + clamp(16px, 5vw, 50px));
+    width: min(220px, calc(50% - clamp(10px, 4vw, 40px)));
   }
 }
 
@@ -2383,22 +2384,14 @@
 }
 
 @media (max-width: 780px) {
-  .scheduleVine {
-    opacity: 0.35;
-    width: 48px;
-  }
-
   .scheduleItemStart::before,
   .scheduleItemEnd::before {
-    left: 50%;
+    left: calc(50% + clamp(16px, 5vw, 50px));
     top: 12px;
   }
 
   .scheduleRow {
-    max-width: 100%;
-    flex-direction: column !important;
-    text-align: left !important;
-    gap: 12px;
+    max-width: min(520px, calc(50% - clamp(16px, 6vw, 60px)));
   }
 
   .scheduleItemEnd .scheduleTag {
