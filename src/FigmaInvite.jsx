@@ -122,7 +122,13 @@ function RsvpForm({ f }) {
   if (status === "success") {
     return (
       <div className={styles.rsvpSuccess} role="status">
-        <span className={styles.rsvpSuccessIcon}>✓</span>
+        <img
+          className={styles.rsvpSuccessIcon}
+          src={figmaAssets.rsvpSuccess}
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+        />
         <h3 className={styles.rsvpSuccessTitle}>{f.rsvp.successTitle}</h3>
         <p className={styles.rsvpSuccessMessage}>{f.rsvp.successMessage}</p>
       </div>

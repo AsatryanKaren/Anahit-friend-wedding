@@ -11,6 +11,7 @@ import collagePortrait2 from "../assets/collage-portrait-2.jpg";
 import collageWalking from "../assets/collage-walking.jpg";
 import collageSitting from "../assets/collage-sitting.jpg";
 import collageWalkingWide from "../assets/collage-walking-wide.jpg";
+import rsvpSuccessIllustration from "../assets/rsvp-success-illustration.png";
 
 /** Hero background: the couple, by the sea */
 export const heroCouplePhoto = {
@@ -42,6 +43,8 @@ export const figmaAssets = {
     small2: collageSitting,
     small3: collageWalking,
   },
+  /** RSVP form: success state illustration */
+  rsvpSuccess: rsvpSuccessIllustration,
 };
 
 /** Maps: driving-directions links (destination-only; Google Maps fills in the origin) */

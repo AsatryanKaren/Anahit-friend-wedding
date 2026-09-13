@@ -3704,16 +3704,10 @@
 }
 
 .rsvpSuccessIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: rgba(122, 98, 60, 0.12);
-  color: rgba(150, 128, 88, 0.9);
-  font-size: 24px;
-  margin-bottom: 20px;
+  display: block;
+  width: min(220px, 55vw);
+  height: auto;
+  margin: 0 auto 20px;
 }
 
 .rsvpSuccessTitle {
