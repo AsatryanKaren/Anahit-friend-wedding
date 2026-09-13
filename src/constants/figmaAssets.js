@@ -53,7 +53,7 @@ export const figmaAssets = {
 /** Maps: driving-directions links (destination-only; Yandex Maps fills in the origin) */
 export const venueLinks = {
   ceremonyDirections:
-    "https://yandex.com/maps/?rtext=~40.180340,44.540385&rtt=auto",
+    "https://yandex.com/maps/?rtext=~40.186807,44.541107&rtt=auto",
   celebrationDirections:
     "https://yandex.com/maps/?rtext=~40.208450,44.529749&rtt=auto",
   groomHouseDirections: "https://yandex.com/maps/?rtext=~40.136693,44.516975&rtt=auto",
