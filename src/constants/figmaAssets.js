@@ -56,6 +56,7 @@ export const venueLinks = {
     "https://yandex.com/maps/org/surb_mariam_astvatsatsin_yekeghetsi/15438436392/",
   celebrationDirections:
     "https://yandex.com/maps/?rtext=~40.208450,44.529749&rtt=auto",
-  groomHouseDirections: "https://yandex.com/maps/?rtext=~40.136693,44.516975&rtt=auto",
+  groomHouseDirections:
+    "https://yandex.com/maps/10262/yerevan/?ll=44.516975%2C40.136693&mode=routes&rtext=~40.136693%2C44.516975&rtt=auto&ruri=~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNzAwMjc5MDU3EkbVgNWh1bXVodW91b_VodW2LCDUtdaA1ofVodW2LCDVhtW41oAg1LHWgNWl1bfVqyAxNy3WgNWkINaD1bjVstW41oEsIDIyIgoNYxEyQhX6iyBC&z=17.06",
   brideHouseDirections: "https://yandex.com/maps/?rtext=~40.146338,44.542236&rtt=auto",
 };
