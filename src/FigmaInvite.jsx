@@ -505,7 +505,7 @@ export default function FigmaInvite() {
                           <div
                             className={`${styles.scheduleItemImage} ${
                               i === 0 || i === 1
-                                ? styles.scheduleItemImageZoom
+                                ? styles.scheduleItemImagePlain
                                 : ""
                             }`.trim()}
                           >

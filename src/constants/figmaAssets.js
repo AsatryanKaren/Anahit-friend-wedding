@@ -4,8 +4,8 @@ import heroCoupleJpg1400 from "../assets/hero-couple-1400.jpg";
 import storyCouplePhoto from "../assets/story-couple.jpg";
 import churchIllustration from "../assets/church-illustration.jpg";
 import vivaldiHallIllustration from "../assets/vivaldi-hall-illustration.webp";
-import brideDressIllustration from "../assets/bride-dress-illustration.jpg";
-import groomSuitIllustration from "../assets/groom-suit-illustration.jpg";
+import brideHairIllustration from "../assets/bride-hair-illustration.png";
+import groomTuxedoIllustration from "../assets/groom-tuxedo-illustration.png";
 import registrationSigningIllustration from "../assets/registration-signing-illustration.jpg";
 import collagePortrait2 from "../assets/collage-portrait-2.jpg";
 import collageWalking from "../assets/collage-walking.jpg";
@@ -29,10 +29,10 @@ export const figmaAssets = {
   ceremonyMap: churchIllustration,
   /** Reception venue: Vivaldi Hall entrance illustration */
   receptionMap: vivaldiHallIllustration,
-  /** Bride's house: wedding dress illustration */
-  brideDress: brideDressIllustration,
-  /** Groom's house: wedding suit illustration */
-  groomSuit: groomSuitIllustration,
+  /** Bride's house: hair and flowers illustration */
+  brideDress: brideHairIllustration,
+  /** Groom's house: tuxedo illustration */
+  groomSuit: groomTuxedoIllustration,
   /** Civil ceremony: signing the marriage registration */
   registrationSigning: registrationSigningIllustration,
   /** Rooted Together: beach photo collage */
