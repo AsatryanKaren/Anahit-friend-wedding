@@ -2840,6 +2840,11 @@
   line-height: 1.7;
   color: rgba(43, 38, 32, 0.9);
   margin: 0;
+  text-align: justify;
+}
+
+.themedHeart {
+  color: #899b6c;
 }
 
 /* Events Section */

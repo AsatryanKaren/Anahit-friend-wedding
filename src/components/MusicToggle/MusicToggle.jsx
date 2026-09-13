@@ -2,20 +2,49 @@ import { useEffect, useRef, useState } from "react";
 import { createWeddingSong } from "./weddingSong.js";
 import styles from "./MusicToggle.module.css";
 
+const RETRY_EVENTS = ["click", "touchstart", "keydown", "scroll"];
+
 /**
  * Background music with a mute toggle, fixed to the top-right corner.
  * Plays the couple's chosen song on loop (see weddingSong.js).
  *
- * Starts muted - the visitor has to tap to turn it on.
+ * Browsers block audio autoplay on most first visits (Safari on iOS
+ * almost always does). We try to start on mount, and if that's
+ * blocked, we retry on the visitor's very first interaction with the
+ * page - so the music starts the moment they tap or scroll, even if
+ * not instantly on load.
  */
 export function MusicToggle({ labels }) {
   const engineRef = useRef(null);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
 
   useEffect(() => {
     const engine = createWeddingSong();
     engineRef.current = engine;
-    return () => engine.dispose();
+
+    const tryStart = () => engine.start().catch(() => {});
+    tryStart();
+
+    const onFirstInteraction = () => {
+      tryStart();
+      cleanup();
+    };
+    const cleanup = () => {
+      RETRY_EVENTS.forEach((evt) =>
+        document.removeEventListener(evt, onFirstInteraction),
+      );
+    };
+    RETRY_EVENTS.forEach((evt) =>
+      document.addEventListener(evt, onFirstInteraction, {
+        once: true,
+        passive: true,
+      }),
+    );
+
+    return () => {
+      cleanup();
+      engine.dispose();
+    };
   }, []);
 
   function toggleMute() {

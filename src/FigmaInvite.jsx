@@ -39,6 +39,22 @@ const SCHEDULE_IMAGES = [
   figmaAssets.receptionMap,
 ];
 
+const HEART_EMOJI = /(❤️|🤍)/g;
+
+function withThemedHearts(text) {
+  return text
+    .split(HEART_EMOJI)
+    .map((part, i) =>
+      part === "❤️" || part === "🤍" ? (
+        <span key={i} className={styles.themedHeart}>
+          ❤︎
+        </span>
+      ) : (
+        part
+      ),
+    );
+}
+
 function Reveal({
   as: Tag = "div",
   children,
@@ -400,7 +416,7 @@ export default function FigmaInvite() {
               <div className={styles.storyNewText}>
                 {f.story.lead.map((paragraph, i) => (
                   <p key={i} className={styles.storyNewLead}>
-                    {paragraph}
+                    {withThemedHearts(paragraph)}
                   </p>
                 ))}
               </div>
@@ -558,7 +574,7 @@ export default function FigmaInvite() {
               </h2>
               {f.attire.dressCodeText.map((paragraph, i) => (
                 <p key={i} className={styles.attireDressCodeText}>
-                  {paragraph}
+                  {withThemedHearts(paragraph)}
                 </p>
               ))}
             </div>
