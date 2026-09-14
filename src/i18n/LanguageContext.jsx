@@ -7,14 +7,14 @@ const LANG = "hy";
 const LanguageContext = createContext(null);
 
 export function LanguageProvider({ children }) {
-  const t = translations[LANG];
+  const t = translations;
 
   useEffect(() => {
     document.documentElement.lang = LANG;
   }, []);
 
   useEffect(() => {
-    applyShareMeta(LANG);
+    applyShareMeta();
   }, []);
 
   const value = useMemo(() => ({ lang: LANG, t }), [t]);

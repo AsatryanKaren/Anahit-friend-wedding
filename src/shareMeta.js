@@ -2,34 +2,14 @@
 
 const SHARE_IMAGE_PATH = "/social-share.jpg";
 
-const SHARE_BY_LANG = {
-  en: {
-    title: "Andranik & Anushik, Wedding, 26 October 2026",
-    description:
-      "Join us in Yerevan, ceremony at Surp Mariam Astvatsatsin Church (Nork Marash), celebration at Vivaldi Hall. Save the date.",
-    ogLocale: "en_GB",
-    imageAlt: "Wedding invitation, Andranik and Anushik",
-    siteName: "Andranik & Anushik",
-    jsonLdName: "Andranik & Anushik, Wedding",
-  },
-  hy: {
-    title: "Անդրանիկ և Անուշիկ · հարսանիք, 26 հոկտեմբեր 2026",
-    description:
-      "Հրավիրում ենք Երևան՝ պսակադրություն Մարիամ Աստվածածին եկեղեցում (Նորք Մարաշ), խնջույք Վիվալդի Հոլլում։ Պահեք ամսաթիվը։",
-    ogLocale: "hy_AM",
-    imageAlt: "Հարսանեկան հրավեր, Անդրանիկ և Անուշիկ",
-    siteName: "Անդրանիկ և Անուշիկ",
-    jsonLdName: "Անդրանիկ և Անուշիկ, հարսանիք",
-  },
-  ru: {
-    title: "Андраник и Анушик · Свадьба, 26 октября 2026",
-    description:
-      "Приглашаем в Ереван: венчание в церкви Сурб Мариам Аствацацин (Норк Мараш), торжество в Vivaldi Hall.",
-    ogLocale: "ru_RU",
-    imageAlt: "Свадебное приглашение, Андраник и Анушик",
-    siteName: "Андраник и Анушик",
-    jsonLdName: "Андраник и Анушик, Свадьба",
-  },
+const SHARE_META = {
+  title: "Անդրանիկ և Անուշիկ · հարսանիք, 26 հոկտեմբեր 2026",
+  description:
+    "Հրավիրում ենք Երևան՝ պսակադրություն Մարիամ Աստվածածին եկեղեցում (Նորք Մարաշ), խնջույք Վիվալդի Հոլլում։ Պահեք ամսաթիվը։",
+  ogLocale: "hy_AM",
+  imageAlt: "Հարսանեկան հրավեր, Անդրանիկ և Անուշիկ",
+  siteName: "Անդրանիկ և Անուշիկ",
+  jsonLdName: "Անդրանիկ և Անուշիկ, հարսանիք",
 };
 
 function ensureMeta(attrName, attrValue) {
@@ -47,11 +27,10 @@ function setMeta(attrName, attrValue, content) {
   el.setAttribute("content", content);
 }
 
-export function applyShareMeta(lang = "en") {
+export function applyShareMeta() {
   if (typeof window === "undefined") return;
 
-  const locale = lang === "hy" ? "hy" : lang === "ru" ? "ru" : "en";
-  const share = SHARE_BY_LANG[locale];
+  const share = SHARE_META;
 
   const base = import.meta.env.BASE_URL || "/";
   const origin = window.location.origin;
