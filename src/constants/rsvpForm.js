@@ -16,3 +16,20 @@ export const RSVP_FIELDS = {
 export const isRsvpFormConfigured = () =>
   !GOOGLE_FORM_ACTION.includes("FORM_ID") &&
   !Object.values(RSVP_FIELDS).some((v) => v.includes("TODO"));
+
+/**
+ * The exact option text the live Google Form expects for its multiple-choice
+ * questions. Kept separate from the button labels shown on the site, since
+ * Google silently drops a radio answer that doesn't match one of its options
+ * verbatim.
+ */
+export const RSVP_GOOGLE_OPTIONS = {
+  guestOf: {
+    groom: "Անդրանիկի",
+    bride: "Անուշիկի",
+  },
+  attending: {
+    yes: "Կարող եմ մասնակցել միջոցառմանը",
+    no: "Չեմ կարող մասնակցել միջոցառմանը",
+  },
+};

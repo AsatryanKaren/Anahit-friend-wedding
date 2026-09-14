@@ -15,6 +15,7 @@ import { useI18n } from "./i18n/LanguageContext.jsx";
 import {
   GOOGLE_FORM_ACTION,
   RSVP_FIELDS,
+  RSVP_GOOGLE_OPTIONS,
   isRsvpFormConfigured,
 } from "./constants/rsvpForm.js";
 import styles from "./FigmaInvite.module.css";
@@ -184,7 +185,7 @@ function RsvpForm({ f }) {
                 <input
                   type="radio"
                   name={RSVP_FIELDS.guestOf}
-                  value={label}
+                  value={RSVP_GOOGLE_OPTIONS.guestOf[key]}
                   checked={values.guestOf === key}
                   onChange={() => update("guestOf", key)}
                 />
@@ -232,7 +233,7 @@ function RsvpForm({ f }) {
               <input
                 type="radio"
                 name={RSVP_FIELDS.attending}
-                value={label}
+                value={RSVP_GOOGLE_OPTIONS.attending[key]}
                 checked={values.attending === key}
                 onChange={() => update("attending", key)}
               />
